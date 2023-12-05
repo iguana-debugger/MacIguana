@@ -9,13 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        HSplitView {
+            RegisterView()
+            VSplitView {
+                DisassemblyView()
+                ConsoleView()
+            }
         }
-        .padding()
+        .toolbar(id: "main") {
+            ToolbarItem(id: "Stop") {
+                Button("Stop", systemImage: "stop.fill") {}
+            }
+            ToolbarItem(id: "Run") {
+                Button("Run", systemImage: "play.fill") {}
+            }
+        }
     }
 }
 

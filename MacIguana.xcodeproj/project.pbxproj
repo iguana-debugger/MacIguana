@@ -11,6 +11,9 @@
 		1A401C272AE81994003EB398 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A401C262AE81994003EB398 /* ContentView.swift */; };
 		1A401C292AE81995003EB398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A401C282AE81995003EB398 /* Assets.xcassets */; };
 		1A401C2C2AE81995003EB398 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A401C2B2AE81995003EB398 /* Preview Assets.xcassets */; };
+		1A7596EA2B1E6271001D46AF /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7596E92B1E6271001D46AF /* RegisterView.swift */; };
+		1A7596EC2B1E62FD001D46AF /* DisassemblyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7596EB2B1E62FD001D46AF /* DisassemblyView.swift */; };
+		1A7A77072B1E6F9000DB6035 /* ConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A77062B1E6F9000DB6035 /* ConsoleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		1A401C282AE81995003EB398 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A401C2B2AE81995003EB398 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1A401C2D2AE81995003EB398 /* MacIguana.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacIguana.entitlements; sourceTree = "<group>"; };
+		1A7596E92B1E6271001D46AF /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		1A7596EB2B1E62FD001D46AF /* DisassemblyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisassemblyView.swift; sourceTree = "<group>"; };
+		1A7A77062B1E6F9000DB6035 /* ConsoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +58,14 @@
 		1A401C232AE81994003EB398 /* MacIguana */ = {
 			isa = PBXGroup;
 			children = (
-				1A401C242AE81994003EB398 /* MacIguanaApp.swift */,
-				1A401C262AE81994003EB398 /* ContentView.swift */,
 				1A401C282AE81995003EB398 /* Assets.xcassets */,
+				1A401C262AE81994003EB398 /* ContentView.swift */,
+				1A7596EB2B1E62FD001D46AF /* DisassemblyView.swift */,
 				1A401C2D2AE81995003EB398 /* MacIguana.entitlements */,
+				1A401C242AE81994003EB398 /* MacIguanaApp.swift */,
 				1A401C2A2AE81995003EB398 /* Preview Content */,
+				1A7596E92B1E6271001D46AF /* RegisterView.swift */,
+				1A7A77062B1E6F9000DB6035 /* ConsoleView.swift */,
 			);
 			path = MacIguana;
 			sourceTree = "<group>";
@@ -139,8 +148,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A7596EA2B1E6271001D46AF /* RegisterView.swift in Sources */,
+				1A7A77072B1E6F9000DB6035 /* ConsoleView.swift in Sources */,
 				1A401C272AE81994003EB398 /* ContentView.swift in Sources */,
 				1A401C252AE81994003EB398 /* MacIguanaApp.swift in Sources */,
+				1A7596EC2B1E62FD001D46AF /* DisassemblyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
