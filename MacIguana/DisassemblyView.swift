@@ -28,13 +28,13 @@ struct DisassemblyView: View {
                 Text(hex)
                     .monospaced()
             }
-            .width(70)
+            .width(90)
             TableColumn("Hex") { instruction in
                 let hex = String(format: "%08X", instruction.value)
                 Text(hex)
                     .monospaced()
             }
-            .width(70)
+            .width(90)
             TableColumn("Disassembly") { instruction in
                 Text(instruction.disassembly ?? "")
                     .monospaced()

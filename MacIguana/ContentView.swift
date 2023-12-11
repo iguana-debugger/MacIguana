@@ -9,18 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VSplitView {
-            HSplitView {
+        VStack(spacing: 0) {
+            HStack {
                 RegisterView()
+                Divider()
                 DisassemblyView()
             }
+            Divider()
             ConsoleView()
         }
         .toolbar(id: "main") {
-            ToolbarItem(id: "Stop") {
+            ToolbarItem(id: "Stop", placement: .primaryAction) {
                 Button("Stop", systemImage: "stop.fill") {}
             }
-            ToolbarItem(id: "Run") {
+            ToolbarItem(id: "Run", placement: .primaryAction) {
                 Button("Run", systemImage: "play.fill") {}
             }
         }

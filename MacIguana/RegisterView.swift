@@ -43,13 +43,13 @@ struct RegisterView: View {
                 Text(register.name)
                     .monospaced()
             }
-            .width(50)
+            .width(60)
             TableColumn("Value") { register in
                 let hex = String(format: "%08X", register.value)
                 Text(hex)
                     .monospaced()
             }
-            .width(70)
+            .width(90)
             TableColumn("ASCII") { register in
                 Text(register.ascii)
                     .monospaced()
