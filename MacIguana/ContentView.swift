@@ -9,12 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        HSplitView {
-            RegisterView()
-            VSplitView {
+        VSplitView {
+            HSplitView {
+                RegisterView()
                 DisassemblyView()
-                ConsoleView()
             }
+            ConsoleView()
         }
         .toolbar(id: "main") {
             ToolbarItem(id: "Stop") {
