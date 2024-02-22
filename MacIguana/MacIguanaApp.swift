@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import Libiguana
 
 @main
 struct MacIguanaApp: App {
+    @State var environment = try? SwiftIguanaEnvironment()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if let environment {
+                ContentView()
+                    .environment(environment)
+            } else {
+                Text("Startup failed :(")
+            }
         }
     }
 }

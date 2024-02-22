@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A12D2CB2B87C06600639258 /* Libiguana in Frameworks */ = {isa = PBXBuildFile; productRef = 1A12D2CA2B87C06600639258 /* Libiguana */; };
 		1A401C252AE81994003EB398 /* MacIguanaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A401C242AE81994003EB398 /* MacIguanaApp.swift */; };
 		1A401C272AE81994003EB398 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A401C262AE81994003EB398 /* ContentView.swift */; };
 		1A401C292AE81995003EB398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A401C282AE81995003EB398 /* Assets.xcassets */; };
@@ -14,6 +15,12 @@
 		1A7596EA2B1E6271001D46AF /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7596E92B1E6271001D46AF /* RegisterView.swift */; };
 		1A7596EC2B1E62FD001D46AF /* DisassemblyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7596EB2B1E62FD001D46AF /* DisassemblyView.swift */; };
 		1A7A77072B1E6F9000DB6035 /* ConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A77062B1E6F9000DB6035 /* ConsoleView.swift */; };
+		1A948C342B87DBAD001515F0 /* Libiguana in Frameworks */ = {isa = PBXBuildFile; productRef = 1A948C332B87DBAD001515F0 /* Libiguana */; };
+		1AFCEA842B86219C000FE4C1 /* Libiguana in Frameworks */ = {isa = PBXBuildFile; productRef = 1AFCEA832B86219C000FE4C1 /* Libiguana */; };
+		1AFCEA872B86235D000FE4C1 /* Libiguana in Frameworks */ = {isa = PBXBuildFile; productRef = 1AFCEA862B86235D000FE4C1 /* Libiguana */; };
+		1AFCEA8A2B86264C000FE4C1 /* SwiftIguanaEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFCEA892B86264C000FE4C1 /* SwiftIguanaEnvironment.swift */; };
+		1AFCEA8D2B86292A000FE4C1 /* Libiguana in Frameworks */ = {isa = PBXBuildFile; productRef = 1AFCEA8C2B86292A000FE4C1 /* Libiguana */; };
+		1AFCEA902B862966000FE4C1 /* Libiguana in Frameworks */ = {isa = PBXBuildFile; productRef = 1AFCEA8F2B862966000FE4C1 /* Libiguana */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,7 @@
 		1A7596E92B1E6271001D46AF /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		1A7596EB2B1E62FD001D46AF /* DisassemblyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisassemblyView.swift; sourceTree = "<group>"; };
 		1A7A77062B1E6F9000DB6035 /* ConsoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleView.swift; sourceTree = "<group>"; };
+		1AFCEA892B86264C000FE4C1 /* SwiftIguanaEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftIguanaEnvironment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +41,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AFCEA8D2B86292A000FE4C1 /* Libiguana in Frameworks */,
+				1AFCEA902B862966000FE4C1 /* Libiguana in Frameworks */,
+				1AFCEA842B86219C000FE4C1 /* Libiguana in Frameworks */,
+				1A948C342B87DBAD001515F0 /* Libiguana in Frameworks */,
+				1AFCEA872B86235D000FE4C1 /* Libiguana in Frameworks */,
+				1A12D2CB2B87C06600639258 /* Libiguana in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +72,7 @@
 		1A401C232AE81994003EB398 /* MacIguana */ = {
 			isa = PBXGroup;
 			children = (
+				1AFCEA882B862641000FE4C1 /* Models */,
 				1A401C282AE81995003EB398 /* Assets.xcassets */,
 				1A401C262AE81994003EB398 /* ContentView.swift */,
 				1A7596EB2B1E62FD001D46AF /* DisassemblyView.swift */,
@@ -78,6 +93,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		1AFCEA882B862641000FE4C1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1AFCEA892B86264C000FE4C1 /* SwiftIguanaEnvironment.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -94,6 +117,14 @@
 			dependencies = (
 			);
 			name = MacIguana;
+			packageProductDependencies = (
+				1AFCEA832B86219C000FE4C1 /* Libiguana */,
+				1AFCEA862B86235D000FE4C1 /* Libiguana */,
+				1AFCEA8C2B86292A000FE4C1 /* Libiguana */,
+				1AFCEA8F2B862966000FE4C1 /* Libiguana */,
+				1A12D2CA2B87C06600639258 /* Libiguana */,
+				1A948C332B87DBAD001515F0 /* Libiguana */,
+			);
 			productName = MacIguana;
 			productReference = 1A401C212AE81994003EB398 /* MacIguana.app */;
 			productType = "com.apple.product-type.application";
@@ -122,6 +153,9 @@
 				Base,
 			);
 			mainGroup = 1A401C182AE81994003EB398;
+			packageReferences = (
+				1A948C322B87DBAD001515F0 /* XCRemoteSwiftPackageReference "libiguana-swift" */,
+			);
 			productRefGroup = 1A401C222AE81994003EB398 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -150,6 +184,7 @@
 			files = (
 				1A7596EA2B1E6271001D46AF /* RegisterView.swift in Sources */,
 				1A7A77072B1E6F9000DB6035 /* ConsoleView.swift in Sources */,
+				1AFCEA8A2B86264C000FE4C1 /* SwiftIguanaEnvironment.swift in Sources */,
 				1A401C272AE81994003EB398 /* ContentView.swift in Sources */,
 				1A401C252AE81994003EB398 /* MacIguanaApp.swift in Sources */,
 				1A7596EC2B1E62FD001D46AF /* DisassemblyView.swift in Sources */,
@@ -353,6 +388,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1A948C322B87DBAD001515F0 /* XCRemoteSwiftPackageReference "libiguana-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/iguana-debugger/libiguana-swift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1A12D2CA2B87C06600639258 /* Libiguana */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Libiguana;
+		};
+		1A948C332B87DBAD001515F0 /* Libiguana */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A948C322B87DBAD001515F0 /* XCRemoteSwiftPackageReference "libiguana-swift" */;
+			productName = Libiguana;
+		};
+		1AFCEA832B86219C000FE4C1 /* Libiguana */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Libiguana;
+		};
+		1AFCEA862B86235D000FE4C1 /* Libiguana */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Libiguana;
+		};
+		1AFCEA8C2B86292A000FE4C1 /* Libiguana */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Libiguana;
+		};
+		1AFCEA8F2B862966000FE4C1 /* Libiguana */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Libiguana;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1A401C192AE81994003EB398 /* Project object */;
 }
