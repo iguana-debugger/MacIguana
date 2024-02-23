@@ -10,7 +10,8 @@ import Libiguana
 
 @main
 struct MacIguanaApp: App {
-    @State var environment = try? SwiftIguanaEnvironment()
+    @State var environment: SwiftIguanaEnvironment?
+    @State var startupError: Error?
     
     var body: some Scene {
         WindowGroup {
@@ -18,7 +19,14 @@ struct MacIguanaApp: App {
                 ContentView()
                     .environment(environment)
             } else {
-                Text("Startup failed :(")
+                Text("Startup failed :( Error was \(startupError.debugDescription)")
+                    .onAppear {
+                        do {
+                            environment = try SwiftIguanaEnvironment()
+                        } catch {
+                            startupError = error
+                        }
+                    }
             }
         }
     }

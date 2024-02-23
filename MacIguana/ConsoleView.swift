@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct ConsoleView: View {
-    @State
-    private var text = "Hello World!"
+    @Environment(SwiftIguanaEnvironment.self) private var iguanaEnvironment
     
     var body: some View {
-        TextEditor(text: $text)
+        TextEditor(text: .constant(iguanaEnvironment.terminal))
             .monospaced()
     }
 }

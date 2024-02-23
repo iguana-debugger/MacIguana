@@ -16,6 +16,8 @@
 		1A7596EC2B1E62FD001D46AF /* DisassemblyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7596EB2B1E62FD001D46AF /* DisassemblyView.swift */; };
 		1A7A77072B1E6F9000DB6035 /* ConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A77062B1E6F9000DB6035 /* ConsoleView.swift */; };
 		1A948C342B87DBAD001515F0 /* Libiguana in Frameworks */ = {isa = PBXBuildFile; productRef = 1A948C332B87DBAD001515F0 /* Libiguana */; };
+		1A948C372B880EF3001515F0 /* Registers+list.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A948C362B880EF3001515F0 /* Registers+list.swift */; };
+		1A948C392B881170001515F0 /* ListRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A948C382B881170001515F0 /* ListRegister.swift */; };
 		1AFCEA842B86219C000FE4C1 /* Libiguana in Frameworks */ = {isa = PBXBuildFile; productRef = 1AFCEA832B86219C000FE4C1 /* Libiguana */; };
 		1AFCEA872B86235D000FE4C1 /* Libiguana in Frameworks */ = {isa = PBXBuildFile; productRef = 1AFCEA862B86235D000FE4C1 /* Libiguana */; };
 		1AFCEA8A2B86264C000FE4C1 /* SwiftIguanaEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFCEA892B86264C000FE4C1 /* SwiftIguanaEnvironment.swift */; };
@@ -33,6 +35,8 @@
 		1A7596E92B1E6271001D46AF /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		1A7596EB2B1E62FD001D46AF /* DisassemblyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisassemblyView.swift; sourceTree = "<group>"; };
 		1A7A77062B1E6F9000DB6035 /* ConsoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleView.swift; sourceTree = "<group>"; };
+		1A948C362B880EF3001515F0 /* Registers+list.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registers+list.swift"; sourceTree = "<group>"; };
+		1A948C382B881170001515F0 /* ListRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRegister.swift; sourceTree = "<group>"; };
 		1AFCEA892B86264C000FE4C1 /* SwiftIguanaEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftIguanaEnvironment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +76,7 @@
 		1A401C232AE81994003EB398 /* MacIguana */ = {
 			isa = PBXGroup;
 			children = (
+				1A948C352B880EDF001515F0 /* Extensions */,
 				1AFCEA882B862641000FE4C1 /* Models */,
 				1A401C282AE81995003EB398 /* Assets.xcassets */,
 				1A401C262AE81994003EB398 /* ContentView.swift */,
@@ -93,10 +98,19 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		1A948C352B880EDF001515F0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1A948C362B880EF3001515F0 /* Registers+list.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		1AFCEA882B862641000FE4C1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				1AFCEA892B86264C000FE4C1 /* SwiftIguanaEnvironment.swift */,
+				1A948C382B881170001515F0 /* ListRegister.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -187,6 +201,8 @@
 				1AFCEA8A2B86264C000FE4C1 /* SwiftIguanaEnvironment.swift in Sources */,
 				1A401C272AE81994003EB398 /* ContentView.swift in Sources */,
 				1A401C252AE81994003EB398 /* MacIguanaApp.swift in Sources */,
+				1A948C372B880EF3001515F0 /* Registers+list.swift in Sources */,
+				1A948C392B881170001515F0 /* ListRegister.swift in Sources */,
 				1A7596EC2B1E62FD001D46AF /* DisassemblyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
