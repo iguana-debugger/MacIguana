@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import Libiguana
 
 struct RegisterView: View {
-    @Environment(SwiftIguanaEnvironment.self) private var iguanaEnvironment
+    public let registers: Registers
     
     var body: some View {
-        Table(iguanaEnvironment.registers.list) {
+        Table(registers.list) {
             TableColumn("Register") { register in
                 Text(register.name)
                     .monospaced()
@@ -32,5 +33,5 @@ struct RegisterView: View {
 }
 
 #Preview {
-    RegisterView()
+    RegisterView(registers: .zero)
 }

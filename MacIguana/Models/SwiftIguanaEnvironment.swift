@@ -15,33 +15,30 @@ class SwiftIguanaEnvironment {
     @ObservationIgnored
     let environment: IguanaEnvironment
     
-    var registers: Registers = .init(
-        r0: 0,
-        r1: 0,
-        r2: 0,
-        r3: 0,
-        r4: 0,
-        r5: 0,
-        r6: 0,
-        r7: 0,
-        r8: 0,
-        r9: 0,
-        r10: 0,
-        r11: 0,
-        r12: 0,
-        r13: 0,
-        r14: 0,
-        pc: 0
-    )
+    var eventLoopError: Error?
+    
+    var registers = Registers.zero
+    
+    var boardState: BoardState
     
     var terminal: String = ""
     
     init() throws {
         self.environment = try IguanaEnvironment()
+        self.boardState = try environment.status()
         
-        Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { _ in
-            self.registers = try! self.environment.registers()
-            self.terminal.append(try! self.environment.terminalMessages())
+        Timer.scheduledTimer(withTimeInterval: 0.05 , repeats: true) { timer in
+            do {
+                self.registers = try self.environment.registers()
+                self.boardState = try self.environment.status()
+                
+                self.terminal.append(try self.environment.terminalMessages())
+            } catch {
+//                If an error has occured, set the error and cancel the run loop.
+//                Errors here should pretty much always be unrecoverable.
+                self.eventLoopError = error
+                timer.invalidate()
+            }
         }
         
         let testKMD = String(decoding: NSDataAsset(name: "hello")!.data, as: UTF8.self)

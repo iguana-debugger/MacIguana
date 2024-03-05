@@ -18,13 +18,23 @@ struct MacIguanaApp: App {
             if let environment {
                 ContentView()
                     .environment(environment)
+                    .alert("Fatal Error", isPresented: .constant(environment.eventLoopError != nil)) {
+                        Button("Quit") {
+                            NSApp.terminate(nil)
+                        }
+                    } message: {
+                        Text("Iguana has had a fatal error. The error was: \(environment.eventLoopError?.localizedDescription ?? "no error????").")
+                    }
+                    .dialogSeverity(.critical)
+            } else if let startupError {
+                Text("Startup failed! The error was \(startupError.localizedDescription)")
             } else {
-                Text("Startup failed :( Error was \(startupError.debugDescription)")
+                ProgressView()
                     .onAppear {
                         do {
                             environment = try SwiftIguanaEnvironment()
                         } catch {
-                            startupError = error
+                            self.startupError = error
                         }
                     }
             }

@@ -18,6 +18,7 @@
 		1A948C342B87DBAD001515F0 /* Libiguana in Frameworks */ = {isa = PBXBuildFile; productRef = 1A948C332B87DBAD001515F0 /* Libiguana */; };
 		1A948C372B880EF3001515F0 /* Registers+list.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A948C362B880EF3001515F0 /* Registers+list.swift */; };
 		1A948C392B881170001515F0 /* ListRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A948C382B881170001515F0 /* ListRegister.swift */; };
+		1AB33E462B9698F3007468AA /* Registers+zero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB33E452B9698F3007468AA /* Registers+zero.swift */; };
 		1AFCEA842B86219C000FE4C1 /* Libiguana in Frameworks */ = {isa = PBXBuildFile; productRef = 1AFCEA832B86219C000FE4C1 /* Libiguana */; };
 		1AFCEA872B86235D000FE4C1 /* Libiguana in Frameworks */ = {isa = PBXBuildFile; productRef = 1AFCEA862B86235D000FE4C1 /* Libiguana */; };
 		1AFCEA8A2B86264C000FE4C1 /* SwiftIguanaEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFCEA892B86264C000FE4C1 /* SwiftIguanaEnvironment.swift */; };
@@ -37,6 +38,7 @@
 		1A7A77062B1E6F9000DB6035 /* ConsoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleView.swift; sourceTree = "<group>"; };
 		1A948C362B880EF3001515F0 /* Registers+list.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registers+list.swift"; sourceTree = "<group>"; };
 		1A948C382B881170001515F0 /* ListRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRegister.swift; sourceTree = "<group>"; };
+		1AB33E452B9698F3007468AA /* Registers+zero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registers+zero.swift"; sourceTree = "<group>"; };
 		1AFCEA892B86264C000FE4C1 /* SwiftIguanaEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftIguanaEnvironment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				1A948C362B880EF3001515F0 /* Registers+list.swift */,
+				1AB33E452B9698F3007468AA /* Registers+zero.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				1A401C272AE81994003EB398 /* ContentView.swift in Sources */,
 				1A401C252AE81994003EB398 /* MacIguanaApp.swift in Sources */,
 				1A948C372B880EF3001515F0 /* Registers+list.swift in Sources */,
+				1AB33E462B9698F3007468AA /* Registers+zero.swift in Sources */,
 				1A948C392B881170001515F0 /* ListRegister.swift in Sources */,
 				1A7596EC2B1E62FD001D46AF /* DisassemblyView.swift in Sources */,
 			);

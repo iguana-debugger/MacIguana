@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(SwiftIguanaEnvironment.self) private var iguanaEnvironment
+    
     var body: some View {
         VSplitView {
             HSplitView {
-                RegisterView()
+                RegisterView(registers: iguanaEnvironment.registers)
                 DisassemblyView()
             }
             ConsoleView()
@@ -20,7 +22,7 @@ struct ContentView: View {
             ToolbarItem(id: "Stop") {
                 Button("Stop", systemImage: "stop.fill") {}
             }
-            ToolbarItem(id: "Run") {
+            ToolbarItem(id: "RunPause") {
                 Button("Run", systemImage: "play.fill") {}
             }
         }
