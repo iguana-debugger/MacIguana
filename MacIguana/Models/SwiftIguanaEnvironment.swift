@@ -44,6 +44,6 @@ class SwiftIguanaEnvironment {
         let testKMD = String(decoding: NSDataAsset(name: "hello")!.data, as: UTF8.self)
         
         try self.environment.loadKmd(kmd: testKMD)
-        try self.environment.start(steps: 0)
+        try self.environment.startExecution(steps: 0)
     }
 }
