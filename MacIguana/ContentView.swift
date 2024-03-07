@@ -32,21 +32,16 @@ struct ContentView: View {
                 Button("Stop", systemImage: "stop.fill") {
                     try? iguanaEnvironment.environment.stopExecution()
                 }
+                .disabled(iguanaEnvironment.boardState.status == .stopped)
             }
-            ToolbarItem(id: "RunPause") {
-                if iguanaEnvironment.boardState.status == .running {
-                    Button("Pause", systemImage: "pause.fill") {
-                        try? iguanaEnvironment.environment.pause()
-                    }
-                } else {
-                    Button("Run", systemImage: "play.fill") {
-                        let status = iguanaEnvironment.boardState.status
-                        
-                        if status == .normal || status == .stopped {
-                            try? iguanaEnvironment.environment.startExecution(steps: 0)
-                        } else {
-                            try? iguanaEnvironment.environment.continueExecution()
-                        }
+            ToolbarItem(id: "Run") {
+                Button("Run", systemImage: "play.fill") {
+                    let status = iguanaEnvironment.boardState.status
+                    
+                    if status == .normal || status == .stopped {
+                        try? iguanaEnvironment.environment.startExecution(steps: 0)
+                    } else {
+                        try? iguanaEnvironment.environment.continueExecution()
                     }
                 }
             }
