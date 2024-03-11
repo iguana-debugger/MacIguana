@@ -1,4 +1,5 @@
 {
+  "originHash" : "9d1e0708ec0134e497f0fd9d95907d62b5eb34fba6e26fa9e80eece008b9a685",
   "pins" : [
     {
       "identity" : "libiguana-swift",
@@ -6,9 +7,9 @@
       "location" : "https://github.com/iguana-debugger/libiguana-swift",
       "state" : {
         "branch" : "main",
-        "revision" : "b15834853a577496773695b009708578f3ae59f5"
+        "revision" : "40a81b48dd197dd6d30a8bba39c5b4e8f5ae9c35"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

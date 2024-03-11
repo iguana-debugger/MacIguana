@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1A12D2CB2B87C06600639258 /* Libiguana in Frameworks */ = {isa = PBXBuildFile; productRef = 1A12D2CA2B87C06600639258 /* Libiguana */; };
+		1A2741712B9F406700E563AE /* KmdparseWord+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2741702B9F406700E563AE /* KmdparseWord+hex.swift */; };
+		1A2741732B9F4A5900E563AE /* KmdparseWord+string.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2741722B9F4A5900E563AE /* KmdparseWord+string.swift */; };
 		1A401C252AE81994003EB398 /* MacIguanaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A401C242AE81994003EB398 /* MacIguanaApp.swift */; };
 		1A401C272AE81994003EB398 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A401C262AE81994003EB398 /* ContentView.swift */; };
 		1A401C292AE81995003EB398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A401C282AE81995003EB398 /* Assets.xcassets */; };
@@ -17,7 +19,9 @@
 		1A7596EA2B1E6271001D46AF /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7596E92B1E6271001D46AF /* RegisterView.swift */; };
 		1A7596EC2B1E62FD001D46AF /* DisassemblyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7596EB2B1E62FD001D46AF /* DisassemblyView.swift */; };
 		1A7A77072B1E6F9000DB6035 /* ConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A77062B1E6F9000DB6035 /* ConsoleView.swift */; };
-		1A948C342B87DBAD001515F0 /* Libiguana in Frameworks */ = {isa = PBXBuildFile; productRef = 1A948C332B87DBAD001515F0 /* Libiguana */; };
+		1A84188A2B9F1BF8006CC42C /* Libiguana in Frameworks */ = {isa = PBXBuildFile; productRef = 1A8418892B9F1BF8006CC42C /* Libiguana */; };
+		1A84188D2B9F1C59006CC42C /* Libiguana in Frameworks */ = {isa = PBXBuildFile; productRef = 1A84188C2B9F1C59006CC42C /* Libiguana */; };
+		1A84188F2B9F29EC006CC42C /* KmdparseLine+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A84188E2B9F29EC006CC42C /* KmdparseLine+Identifiable.swift */; };
 		1A948C372B880EF3001515F0 /* Registers+list.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A948C362B880EF3001515F0 /* Registers+list.swift */; };
 		1A948C392B881170001515F0 /* ListRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A948C382B881170001515F0 /* ListRegister.swift */; };
 		1AB33E462B9698F3007468AA /* Registers+zero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB33E452B9698F3007468AA /* Registers+zero.swift */; };
@@ -29,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A2741702B9F406700E563AE /* KmdparseWord+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KmdparseWord+hex.swift"; sourceTree = "<group>"; };
+		1A2741722B9F4A5900E563AE /* KmdparseWord+string.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KmdparseWord+string.swift"; sourceTree = "<group>"; };
 		1A401C212AE81994003EB398 /* MacIguana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacIguana.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A401C242AE81994003EB398 /* MacIguanaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacIguanaApp.swift; sourceTree = "<group>"; };
 		1A401C262AE81994003EB398 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,6 +46,7 @@
 		1A7596E92B1E6271001D46AF /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		1A7596EB2B1E62FD001D46AF /* DisassemblyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisassemblyView.swift; sourceTree = "<group>"; };
 		1A7A77062B1E6F9000DB6035 /* ConsoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleView.swift; sourceTree = "<group>"; };
+		1A84188E2B9F29EC006CC42C /* KmdparseLine+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KmdparseLine+Identifiable.swift"; sourceTree = "<group>"; };
 		1A948C362B880EF3001515F0 /* Registers+list.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registers+list.swift"; sourceTree = "<group>"; };
 		1A948C382B881170001515F0 /* ListRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRegister.swift; sourceTree = "<group>"; };
 		1AB33E452B9698F3007468AA /* Registers+zero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registers+zero.swift"; sourceTree = "<group>"; };
@@ -54,7 +61,8 @@
 				1AFCEA8D2B86292A000FE4C1 /* Libiguana in Frameworks */,
 				1AFCEA902B862966000FE4C1 /* Libiguana in Frameworks */,
 				1AFCEA842B86219C000FE4C1 /* Libiguana in Frameworks */,
-				1A948C342B87DBAD001515F0 /* Libiguana in Frameworks */,
+				1A84188D2B9F1C59006CC42C /* Libiguana in Frameworks */,
+				1A84188A2B9F1BF8006CC42C /* Libiguana in Frameworks */,
 				1AFCEA872B86235D000FE4C1 /* Libiguana in Frameworks */,
 				1A12D2CB2B87C06600639258 /* Libiguana in Frameworks */,
 			);
@@ -108,9 +116,12 @@
 		1A948C352B880EDF001515F0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1A84188E2B9F29EC006CC42C /* KmdparseLine+Identifiable.swift */,
 				1A948C362B880EF3001515F0 /* Registers+list.swift */,
 				1AB33E452B9698F3007468AA /* Registers+zero.swift */,
 				1A742BA82B97A06D00BFB27A /* Status+CustomStringConvertible.swift */,
+				1A2741702B9F406700E563AE /* KmdparseWord+hex.swift */,
+				1A2741722B9F4A5900E563AE /* KmdparseWord+string.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -146,7 +157,8 @@
 				1AFCEA8C2B86292A000FE4C1 /* Libiguana */,
 				1AFCEA8F2B862966000FE4C1 /* Libiguana */,
 				1A12D2CA2B87C06600639258 /* Libiguana */,
-				1A948C332B87DBAD001515F0 /* Libiguana */,
+				1A8418892B9F1BF8006CC42C /* Libiguana */,
+				1A84188C2B9F1C59006CC42C /* Libiguana */,
 			);
 			productName = MacIguana;
 			productReference = 1A401C212AE81994003EB398 /* MacIguana.app */;
@@ -177,7 +189,7 @@
 			);
 			mainGroup = 1A401C182AE81994003EB398;
 			packageReferences = (
-				1A948C322B87DBAD001515F0 /* XCRemoteSwiftPackageReference "libiguana-swift" */,
+				1A84188B2B9F1C59006CC42C /* XCRemoteSwiftPackageReference "libiguana-swift" */,
 			);
 			productRefGroup = 1A401C222AE81994003EB398 /* Products */;
 			projectDirPath = "";
@@ -205,12 +217,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A84188F2B9F29EC006CC42C /* KmdparseLine+Identifiable.swift in Sources */,
 				1A7596EA2B1E6271001D46AF /* RegisterView.swift in Sources */,
 				1A7A77072B1E6F9000DB6035 /* ConsoleView.swift in Sources */,
 				1AFCEA8A2B86264C000FE4C1 /* SwiftIguanaEnvironment.swift in Sources */,
 				1A401C272AE81994003EB398 /* ContentView.swift in Sources */,
 				1A742BA72B979F5900BFB27A /* BoardStatePane.swift in Sources */,
 				1A401C252AE81994003EB398 /* MacIguanaApp.swift in Sources */,
+				1A2741712B9F406700E563AE /* KmdparseWord+hex.swift in Sources */,
+				1A2741732B9F4A5900E563AE /* KmdparseWord+string.swift in Sources */,
 				1A742BA92B97A06D00BFB27A /* Status+CustomStringConvertible.swift in Sources */,
 				1A948C372B880EF3001515F0 /* Registers+list.swift in Sources */,
 				1AB33E462B9698F3007468AA /* Registers+zero.swift in Sources */,
@@ -418,7 +433,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1A948C322B87DBAD001515F0 /* XCRemoteSwiftPackageReference "libiguana-swift" */ = {
+		1A84188B2B9F1C59006CC42C /* XCRemoteSwiftPackageReference "libiguana-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/iguana-debugger/libiguana-swift";
 			requirement = {
@@ -433,9 +448,13 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Libiguana;
 		};
-		1A948C332B87DBAD001515F0 /* Libiguana */ = {
+		1A8418892B9F1BF8006CC42C /* Libiguana */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1A948C322B87DBAD001515F0 /* XCRemoteSwiftPackageReference "libiguana-swift" */;
+			productName = Libiguana;
+		};
+		1A84188C2B9F1C59006CC42C /* Libiguana */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A84188B2B9F1C59006CC42C /* XCRemoteSwiftPackageReference "libiguana-swift" */;
 			productName = Libiguana;
 		};
 		1AFCEA832B86219C000FE4C1 /* Libiguana */ = {

@@ -15,24 +15,30 @@ struct ContentView: View {
             VSplitView {
                 HSplitView {
                     RegisterView(registers: iguanaEnvironment.registers)
-                    DisassemblyView()
+                        .frame(maxWidth: 300)
+                    DisassemblyView(lines: iguanaEnvironment.currentKmd ?? [])
                 }
+                .layoutPriority(1)
                 ConsoleView()
+                    .frame(minHeight: 200)
             }
             BoardStatePane(boardState: iguanaEnvironment.boardState)
-                .safeAreaPadding(.zero)
+                .padding(.bottom, 4)
+                .padding(.horizontal, 10)
         }
         .toolbar(id: "main") {
             ToolbarItem(id: "Reset") {
                 Button("Reset", systemImage: "arrow.clockwise") {
                     try? iguanaEnvironment.environment.reset()
                 }
+//                .keyboardShortcut("r")
             }
             ToolbarItem(id: "Stop") {
                 Button("Stop", systemImage: "stop.fill") {
                     try? iguanaEnvironment.environment.stopExecution()
                 }
                 .disabled(iguanaEnvironment.boardState.status == .stopped)
+                .keyboardShortcut(".")
             }
             ToolbarItem(id: "Run") {
                 Button("Run", systemImage: "play.fill") {
@@ -44,11 +50,12 @@ struct ContentView: View {
                         try? iguanaEnvironment.environment.continueExecution()
                     }
                 }
+                .keyboardShortcut("r")
             }
         }
     }
 }
 
-#Preview {
-    ContentView()
-}
+//#Preview {
+//    ContentView()
+//}

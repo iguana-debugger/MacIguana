@@ -6,37 +6,37 @@
 //
 
 import SwiftUI
-
-struct Instruction: Identifiable {
-    let id = UUID()
-    
-    let address: UInt32
-    let value: UInt32
-    let disassembly: String?
-}
+import Libiguana
 
 struct DisassemblyView: View {
-    private let instructions = [
-        Instruction(address: 0, value: 0xEA000007, disassembly: "         B main"),
-        Instruction(address: 4, value: 0x48656C6C, disassembly: "hello   DEFB    \"Hello World\\n\",0"),
-        Instruction(address: 8, value: 0x6F20576f, disassembly: nil)
-    ]
+    public let lines: [KmdparseLine]
+    
     var body: some View {
-        Table(instructions) {
-            TableColumn("Address") { instruction in
-                let hex = String(format: "%08X", instruction.address)
-                Text(hex)
-                    .monospaced()
+        Table(lines) {
+            TableColumn("Address") { line in
+                if let memoryAddress = line.memoryAddress {
+                    let hex = String(format: "%08X", memoryAddress)
+                    Text(hex)
+                        .monospaced()
+                }
             }
             .width(70)
-            TableColumn("Hex") { instruction in
-                let hex = String(format: "%08X", instruction.value)
-                Text(hex)
-                    .monospaced()
+            TableColumn("Hex") { line in
+                if let word = line.word {
+                    Text(word.hex)
+                        .monospaced()
+                }
             }
-            .width(70)
-            TableColumn("Disassembly") { instruction in
-                Text(instruction.disassembly ?? "")
+            .width(80)
+            TableColumn("String") {line in
+                if let string = line.word?.string {
+                    Text(string)
+                        .monospaced()
+                }
+            }
+            .width(40)
+            TableColumn("Disassembly") { line in
+                Text(line.comment)
                     .monospaced()
             }
         }
@@ -44,5 +44,7 @@ struct DisassemblyView: View {
 }
 
 #Preview {
-    DisassemblyView()
+    DisassemblyView(lines: [
+        .init(memoryAddress: 0xDEADBEEF, word: .instruction(instruction: 0xDEADBEEF), comment: "Comment")
+    ])
 }

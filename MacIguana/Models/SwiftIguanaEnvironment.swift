@@ -15,11 +15,13 @@ class SwiftIguanaEnvironment {
     @ObservationIgnored
     let environment: IguanaEnvironment
     
+    var boardState: BoardState
+    
+    var currentKmd: [KmdparseLine]?
+    
     var eventLoopError: Error?
     
     var registers = Registers.zero
-    
-    var boardState: BoardState
     
     var terminal: String = ""
     
@@ -31,6 +33,12 @@ class SwiftIguanaEnvironment {
             do {
                 self.registers = try self.environment.registers()
                 self.boardState = try self.environment.status()
+                self.currentKmd = self.environment.currentKmd()?.compactMap { 
+                    if case let .line(line) = $0 {
+                        return line
+                    }
+                    return nil
+                }
                 
                 self.terminal.append(try self.environment.terminalMessages())
             } catch {

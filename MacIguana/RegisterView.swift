@@ -28,6 +28,7 @@ struct RegisterView: View {
                 Text(register.string)
                     .monospaced()
             }
+//            .width(70)
         }
     }
 }
