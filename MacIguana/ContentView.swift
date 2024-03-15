@@ -15,7 +15,7 @@ struct ContentView: View {
             VSplitView {
                 HSplitView {
                     RegisterView(registers: iguanaEnvironment.registers)
-                        .frame(maxWidth: 300)
+                        .frame(maxWidth: 250)
                     DisassemblyView(lines: iguanaEnvironment.currentKmd ?? [])
                 }
                 .layoutPriority(1)

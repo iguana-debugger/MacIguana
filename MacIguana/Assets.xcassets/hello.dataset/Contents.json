@@ -1,8 +1,9 @@
 {
   "data" : [
     {
-      "filename" : "hello.kmd",
-      "idiom" : "universal"
+      "filename" : "01-hello.s",
+      "idiom" : "universal",
+      "universal-type-identifier" : "public.assembly-source"
     }
   ],
   "info" : {
