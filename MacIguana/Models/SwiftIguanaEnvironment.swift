@@ -25,20 +25,27 @@ class SwiftIguanaEnvironment {
     
     var terminal: String = ""
     
-    init() throws {
+    init(asmPath: URL, includePaths: [String] = []) throws {
         self.environment = try IguanaEnvironment()
+        
+//        Needed because boardState needs to be set in init
         self.boardState = try environment.status()
+        
+        let kmd = try self.environment.compileAasm(aasmPath: asmPath.path(percentEncoded: false))
+        
+        try self.environment.loadKmd(kmd: kmd.kmd)
+        
+        self.currentKmd = self.environment.currentKmd()?.compactMap {
+            if case let .line(line) = $0 {
+                return line
+            }
+            return nil
+        }
         
         Timer.scheduledTimer(withTimeInterval: 0.05 , repeats: true) { timer in
             do {
                 self.registers = try self.environment.registers()
                 self.boardState = try self.environment.status()
-                self.currentKmd = self.environment.currentKmd()?.compactMap { 
-                    if case let .line(line) = $0 {
-                        return line
-                    }
-                    return nil
-                }
                 
                 self.terminal.append(try self.environment.terminalMessages())
             } catch {
@@ -48,15 +55,5 @@ class SwiftIguanaEnvironment {
                 timer.invalidate()
             }
         }
-        
-        let testAsm = String(decoding: NSDataAsset(name: "hello")!.data, as: UTF8.self)
-        
-        let kmd = try self.environment.compileAasm(aasmString: testAsm)
-        
-        print(kmd.aasmTerminal)
-        print(kmd.kmd)
-        
-        try self.environment.loadKmd(kmd: kmd.kmd)
-        try self.environment.startExecution(steps: 0)
     }
 }

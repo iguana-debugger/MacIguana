@@ -14,6 +14,7 @@
 		1A401C272AE81994003EB398 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A401C262AE81994003EB398 /* ContentView.swift */; };
 		1A401C292AE81995003EB398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A401C282AE81995003EB398 /* Assets.xcassets */; };
 		1A401C2C2AE81995003EB398 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A401C2B2AE81995003EB398 /* Preview Assets.xcassets */; };
+		1A480F7E2BA9FEAB0016A17D /* AssemblyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A480F7D2BA9FEAB0016A17D /* AssemblyLoader.swift */; };
 		1A742BA72B979F5900BFB27A /* BoardStatePane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A742BA62B979F5900BFB27A /* BoardStatePane.swift */; };
 		1A742BA92B97A06D00BFB27A /* Status+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A742BA82B97A06D00BFB27A /* Status+CustomStringConvertible.swift */; };
 		1A7596EA2B1E6271001D46AF /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7596E92B1E6271001D46AF /* RegisterView.swift */; };
@@ -25,6 +26,7 @@
 		1A948C372B880EF3001515F0 /* Registers+list.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A948C362B880EF3001515F0 /* Registers+list.swift */; };
 		1A948C392B881170001515F0 /* ListRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A948C382B881170001515F0 /* ListRegister.swift */; };
 		1AB33E462B9698F3007468AA /* Registers+zero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB33E452B9698F3007468AA /* Registers+zero.swift */; };
+		1AE0B2702BA4AE450053686F /* KomodoDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE0B26F2BA4AE450053686F /* KomodoDocument.swift */; };
 		1AFCEA842B86219C000FE4C1 /* Libiguana in Frameworks */ = {isa = PBXBuildFile; productRef = 1AFCEA832B86219C000FE4C1 /* Libiguana */; };
 		1AFCEA872B86235D000FE4C1 /* Libiguana in Frameworks */ = {isa = PBXBuildFile; productRef = 1AFCEA862B86235D000FE4C1 /* Libiguana */; };
 		1AFCEA8A2B86264C000FE4C1 /* SwiftIguanaEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFCEA892B86264C000FE4C1 /* SwiftIguanaEnvironment.swift */; };
@@ -41,6 +43,7 @@
 		1A401C282AE81995003EB398 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A401C2B2AE81995003EB398 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1A401C2D2AE81995003EB398 /* MacIguana.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacIguana.entitlements; sourceTree = "<group>"; };
+		1A480F7D2BA9FEAB0016A17D /* AssemblyLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyLoader.swift; sourceTree = "<group>"; };
 		1A742BA62B979F5900BFB27A /* BoardStatePane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardStatePane.swift; sourceTree = "<group>"; };
 		1A742BA82B97A06D00BFB27A /* Status+CustomStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+CustomStringConvertible.swift"; sourceTree = "<group>"; };
 		1A7596E92B1E6271001D46AF /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -50,6 +53,8 @@
 		1A948C362B880EF3001515F0 /* Registers+list.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registers+list.swift"; sourceTree = "<group>"; };
 		1A948C382B881170001515F0 /* ListRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRegister.swift; sourceTree = "<group>"; };
 		1AB33E452B9698F3007468AA /* Registers+zero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registers+zero.swift"; sourceTree = "<group>"; };
+		1AE0B26F2BA4AE450053686F /* KomodoDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KomodoDocument.swift; sourceTree = "<group>"; };
+		1AE0B2712BA4AF890053686F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1AFCEA892B86264C000FE4C1 /* SwiftIguanaEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftIguanaEnvironment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +95,7 @@
 		1A401C232AE81994003EB398 /* MacIguana */ = {
 			isa = PBXGroup;
 			children = (
+				1AE0B2712BA4AF890053686F /* Info.plist */,
 				1A948C352B880EDF001515F0 /* Extensions */,
 				1AFCEA882B862641000FE4C1 /* Models */,
 				1A401C282AE81995003EB398 /* Assets.xcassets */,
@@ -101,6 +107,7 @@
 				1A401C2A2AE81995003EB398 /* Preview Content */,
 				1A7596E92B1E6271001D46AF /* RegisterView.swift */,
 				1A742BA62B979F5900BFB27A /* BoardStatePane.swift */,
+				1A480F7D2BA9FEAB0016A17D /* AssemblyLoader.swift */,
 			);
 			path = MacIguana;
 			sourceTree = "<group>";
@@ -131,6 +138,7 @@
 			children = (
 				1AFCEA892B86264C000FE4C1 /* SwiftIguanaEnvironment.swift */,
 				1A948C382B881170001515F0 /* ListRegister.swift */,
+				1AE0B26F2BA4AE450053686F /* KomodoDocument.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -223,8 +231,10 @@
 				1AFCEA8A2B86264C000FE4C1 /* SwiftIguanaEnvironment.swift in Sources */,
 				1A401C272AE81994003EB398 /* ContentView.swift in Sources */,
 				1A742BA72B979F5900BFB27A /* BoardStatePane.swift in Sources */,
+				1A480F7E2BA9FEAB0016A17D /* AssemblyLoader.swift in Sources */,
 				1A401C252AE81994003EB398 /* MacIguanaApp.swift in Sources */,
 				1A2741712B9F406700E563AE /* KmdparseWord+hex.swift in Sources */,
+				1AE0B2702BA4AE450053686F /* KomodoDocument.swift in Sources */,
 				1A2741732B9F4A5900E563AE /* KmdparseWord+string.swift in Sources */,
 				1A742BA92B97A06D00BFB27A /* Status+CustomStringConvertible.swift in Sources */,
 				1A948C372B880EF3001515F0 /* Registers+list.swift in Sources */,
@@ -369,6 +379,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MacIguana/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -396,6 +408,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MacIguana/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
