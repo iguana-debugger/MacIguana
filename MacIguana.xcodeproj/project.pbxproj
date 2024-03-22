@@ -22,7 +22,6 @@
 		1A7A77072B1E6F9000DB6035 /* ConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A77062B1E6F9000DB6035 /* ConsoleView.swift */; };
 		1A84188A2B9F1BF8006CC42C /* Libiguana in Frameworks */ = {isa = PBXBuildFile; productRef = 1A8418892B9F1BF8006CC42C /* Libiguana */; };
 		1A84188D2B9F1C59006CC42C /* Libiguana in Frameworks */ = {isa = PBXBuildFile; productRef = 1A84188C2B9F1C59006CC42C /* Libiguana */; };
-		1A84188F2B9F29EC006CC42C /* KmdparseLine+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A84188E2B9F29EC006CC42C /* KmdparseLine+Identifiable.swift */; };
 		1A948C372B880EF3001515F0 /* Registers+list.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A948C362B880EF3001515F0 /* Registers+list.swift */; };
 		1A948C392B881170001515F0 /* ListRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A948C382B881170001515F0 /* ListRegister.swift */; };
 		1AB33E462B9698F3007468AA /* Registers+zero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB33E452B9698F3007468AA /* Registers+zero.swift */; };
@@ -49,7 +48,6 @@
 		1A7596E92B1E6271001D46AF /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		1A7596EB2B1E62FD001D46AF /* DisassemblyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisassemblyView.swift; sourceTree = "<group>"; };
 		1A7A77062B1E6F9000DB6035 /* ConsoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleView.swift; sourceTree = "<group>"; };
-		1A84188E2B9F29EC006CC42C /* KmdparseLine+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KmdparseLine+Identifiable.swift"; sourceTree = "<group>"; };
 		1A948C362B880EF3001515F0 /* Registers+list.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registers+list.swift"; sourceTree = "<group>"; };
 		1A948C382B881170001515F0 /* ListRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRegister.swift; sourceTree = "<group>"; };
 		1AB33E452B9698F3007468AA /* Registers+zero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registers+zero.swift"; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 		1A948C352B880EDF001515F0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				1A84188E2B9F29EC006CC42C /* KmdparseLine+Identifiable.swift */,
 				1A948C362B880EF3001515F0 /* Registers+list.swift */,
 				1AB33E452B9698F3007468AA /* Registers+zero.swift */,
 				1A742BA82B97A06D00BFB27A /* Status+CustomStringConvertible.swift */,
@@ -225,7 +222,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A84188F2B9F29EC006CC42C /* KmdparseLine+Identifiable.swift in Sources */,
 				1A7596EA2B1E6271001D46AF /* RegisterView.swift in Sources */,
 				1A7A77072B1E6F9000DB6035 /* ConsoleView.swift in Sources */,
 				1AFCEA8A2B86264C000FE4C1 /* SwiftIguanaEnvironment.swift in Sources */,
