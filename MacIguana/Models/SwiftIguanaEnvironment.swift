@@ -9,6 +9,10 @@ import AppKit
 import Foundation
 import Libiguana
 
+enum CompileFailedError: Error {
+    case aasmFailed(terminal: String)
+}
+
 /// A wrapper around `IguanaEnvironment` to allow for Observable
 @Observable
 class SwiftIguanaEnvironment {
@@ -32,6 +36,10 @@ class SwiftIguanaEnvironment {
         self.boardState = try environment.status()
         
         let kmd = try self.environment.compileAasm(aasmPath: asmPath.path(percentEncoded: false))
+        
+        if kmd.aasmTerminal.contains("No output generated.") {
+            throw CompileFailedError.aasmFailed(terminal: kmd.aasmTerminal)
+        }
         
         try self.environment.loadKmd(kmd: kmd.kmd)
         
