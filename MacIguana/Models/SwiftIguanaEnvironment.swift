@@ -29,6 +29,8 @@ class SwiftIguanaEnvironment {
     
     var terminal: String = ""
     
+    var timer: Timer = .init() // We do an empty init here so that we can capture self in init
+    
     init(asmPath: URL, includePaths: [String] = []) throws {
         self.environment = try IguanaEnvironment()
         
@@ -50,18 +52,21 @@ class SwiftIguanaEnvironment {
             return nil
         }
         
-        Timer.scheduledTimer(withTimeInterval: 0.05 , repeats: true) { timer in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.05 , repeats: true) { [weak self] timer in
             do {
-                self.registers = try self.environment.registers()
-                self.boardState = try self.environment.status()
-                
-                self.terminal.append(try self.environment.terminalMessages())
+                self?.registers = try self?.environment.registers() ?? .zero
+                self?.boardState = try self?.environment.status() ?? .init(status: .broken, stepsRemaining: 0, stepsSinceReset: 0)
+                self?.terminal.append(try self?.environment.terminalMessages() ?? "")
             } catch {
-//                If an error has occured, set the error and cancel the run loop.
+//                If an error has occurred, set the error and cancel the run loop.
 //                Errors here should pretty much always be unrecoverable.
-                self.eventLoopError = error
+                self?.eventLoopError = error
                 timer.invalidate()
             }
         }
+    }
+
+    deinit {
+        timer.invalidate()
     }
 }

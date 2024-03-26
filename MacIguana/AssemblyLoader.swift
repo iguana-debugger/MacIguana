@@ -16,18 +16,33 @@ struct AssemblyLoader: View {
     @State private var startupError: String?
     @State private var startUpErrorHeight = 0.0
     
+    private func loadEnvironment() {
+        do {
+            environment = try SwiftIguanaEnvironment(asmPath: url)
+        } catch CompileFailedError.aasmFailed(let terminal) {
+            startupError = terminal
+        } catch {
+            startupError = error.localizedDescription
+        }
+    }
+    
     var body: some View {
         if let environment {
-            ContentView()
-                .environment(environment)
-                .alert("Fatal Error", isPresented: .constant(environment.eventLoopError != nil)) {
-                    Button("Close") {
-                        dismissWindow()
-                    }
-                } message: {
-                    Text("Iguana has had a fatal error. The error was: \(environment.eventLoopError?.localizedDescription ?? "no error????").")
+            ContentView(environment: environment) {
+                try? environment.environment.killJimulator()
+                loadEnvironment()
+            }
+            .alert("Fatal Error", isPresented: .constant(environment.eventLoopError != nil)) {
+                Button("Close") {
+                    dismissWindow()
                 }
-                .dialogSeverity(.critical)
+            } message: {
+                Text("Iguana has had a fatal error. The error was: \(environment.eventLoopError?.localizedDescription ?? "no error????").")
+            }
+            .dialogSeverity(.critical)
+            .onReceive(NotificationCenter.default.publisher(for: NSApplication.willTerminateNotification), perform: { _ in
+                try? environment.environment.killJimulator()
+            })
         } else if let startupError {
             ScrollView {
                 Group {
@@ -37,6 +52,9 @@ struct AssemblyLoader: View {
                     )
                     Text(startupError)
                         .monospaced()
+                    Button("Reload", systemImage: "arrow.clockwise") {
+                        loadEnvironment()
+                    }
                 }
                 .overlay {
                     GeometryReader { geo in
@@ -51,13 +69,7 @@ struct AssemblyLoader: View {
         } else {
             ProgressView()
                 .onAppear {
-                    do {
-                        environment = try SwiftIguanaEnvironment(asmPath: url)
-                    } catch CompileFailedError.aasmFailed(let terminal) {
-                        startupError = terminal
-                    } catch {
-                        startupError = error.localizedDescription
-                    }
+                    loadEnvironment()
                 }
         }
     }

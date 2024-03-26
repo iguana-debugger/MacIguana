@@ -8,46 +8,48 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(SwiftIguanaEnvironment.self) private var iguanaEnvironment
+    public let environment: SwiftIguanaEnvironment
+    
+    /// A callback to a function that reloads the current assembly file.
+    public let onReload: () -> ()
     
     var body: some View {
         VStack {
             VSplitView {
                 HSplitView {
-                    RegisterView(registers: iguanaEnvironment.registers)
+                    RegisterView(registers: environment.registers)
                         .frame(maxWidth: 250)
-                    DisassemblyView(lines: iguanaEnvironment.currentKmd ?? [])
+                    DisassemblyView(lines: environment.currentKmd ?? [])
                 }
                 .layoutPriority(1)
-                ConsoleView()
+                ConsoleView(environment: environment)
                     .frame(minHeight: 200)
             }
-            BoardStatePane(boardState: iguanaEnvironment.boardState)
+            BoardStatePane(boardState: environment.boardState)
                 .padding(.bottom, 4)
                 .padding(.horizontal, 10)
         }
         .toolbar(id: "main") {
             ToolbarItem(id: "Reset") {
                 Button("Reset", systemImage: "arrow.clockwise") {
-                    try? iguanaEnvironment.environment.reset()
+                    onReload()
                 }
-//                .keyboardShortcut("r")
             }
             ToolbarItem(id: "Stop") {
                 Button("Stop", systemImage: "stop.fill") {
-                    try? iguanaEnvironment.environment.stopExecution()
+                    try? environment.environment.stopExecution()
                 }
-                .disabled(iguanaEnvironment.boardState.status == .stopped)
+                .disabled(environment.boardState.status == .stopped)
                 .keyboardShortcut(".")
             }
             ToolbarItem(id: "Run") {
                 Button("Run", systemImage: "play.fill") {
-                    let status = iguanaEnvironment.boardState.status
+                    let status = environment.boardState.status
                     
                     if status == .normal || status == .stopped {
-                        try? iguanaEnvironment.environment.startExecution(steps: 0)
+                        try? environment.environment.startExecution(steps: 0)
                     } else {
-                        try? iguanaEnvironment.environment.continueExecution()
+                        try? environment.environment.continueExecution()
                     }
                 }
                 .keyboardShortcut("r")
