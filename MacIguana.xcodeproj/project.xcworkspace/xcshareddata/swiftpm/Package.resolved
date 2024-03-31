@@ -1,5 +1,5 @@
 {
-  "originHash" : "9d1e0708ec0134e497f0fd9d95907d62b5eb34fba6e26fa9e80eece008b9a685",
+  "originHash" : "c2ab5f1f71fb689a02d300883a91b9f46608f94b7f6a105c77339be57eb5ed82",
   "pins" : [
     {
       "identity" : "libiguana-swift",
@@ -7,7 +7,15 @@
       "location" : "https://github.com/iguana-debugger/libiguana-swift",
       "state" : {
         "branch" : "main",
-        "revision" : "122e53d4e26d9810f2a98a9163825ef78cbc702c"
+        "revision" : "f7a48fd5a2ba68e3880dbc1c35797f6fa39c54f8"
+      }
+    },
+    {
+      "identity" : "swiftterm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/migueldeicaza/SwiftTerm",
+      "state" : {
+        "revision" : "90c0cd9bd3b97ff9fdcbba478d7dd40c68ecea85"
       }
     }
   ],

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Libiguana
 
 struct AssemblyLoader: View {
     public let url: URL
@@ -36,7 +37,12 @@ struct AssemblyLoader: View {
                     dismissWindow()
                 }
             } message: {
-                Text("Iguana has had a fatal error. The error was: \(environment.eventLoopError?.localizedDescription ?? "no error????").")
+                let errorText = if let iguanaError = environment.eventLoopError as? LibiguanaError {
+                    iguanaError.errorDescription
+                } else {
+                    environment.eventLoopError?.localizedDescription
+                }
+                Text("Iguana has had a fatal error. The error was: \(errorText ?? "no error????").")
             }
             .dialogSeverity(.critical)
         } else if let startupError {

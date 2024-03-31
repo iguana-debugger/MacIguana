@@ -22,7 +22,10 @@ struct ContentView: View {
                     DisassemblyView(lines: environment.currentKmd ?? [])
                 }
                 .layoutPriority(1)
-                ConsoleView(environment: environment)
+                ConsoleView(terminal: .init(get: { environment.terminal }, set: { environment.terminal = $0 })) {
+                    let convertedData = $0.map { $0 == 13 ? 10 : $0 }
+                    try! environment.environment.writeToTerminal(message: Data(convertedData))
+                }
                     .frame(minHeight: 200)
             }
             BoardStatePane(boardState: environment.boardState)

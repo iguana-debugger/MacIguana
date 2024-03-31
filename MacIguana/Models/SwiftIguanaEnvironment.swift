@@ -23,11 +23,11 @@ class SwiftIguanaEnvironment {
     
     var currentKmd: [KmdparseLine]?
     
-    var eventLoopError: Error?
+    var eventLoopError: (any Error)?
     
     var registers = Registers.zero
     
-    var terminal: String = ""
+    var terminal: [UInt8] = []
     
     var timer: Timer = .init() // We do an empty init here so that we can capture self in init
     
@@ -56,7 +56,14 @@ class SwiftIguanaEnvironment {
             do {
                 self?.registers = try self?.environment.registers() ?? .zero
                 self?.boardState = try self?.environment.status() ?? .init(status: .broken, stepsRemaining: 0, stepsSinceReset: 0)
-                self?.terminal.append(try self?.environment.terminalMessages() ?? "")
+//                self?.terminal.append(try self?.environment.terminalMessages() ?? "")
+                
+                let terminal = try self?.environment.terminalMessages()
+                
+                if let terminal {
+                    let terminalBytes = [UInt8](terminal)
+                    self?.terminal.append(contentsOf: terminalBytes)
+                }
             } catch {
 //                If an error has occurred, set the error and cancel the run loop.
 //                Errors here should pretty much always be unrecoverable.

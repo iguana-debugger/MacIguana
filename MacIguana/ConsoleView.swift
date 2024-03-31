@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct ConsoleView: View {
-    public let environment: SwiftIguanaEnvironment
+    @Binding public var terminal: [UInt8]
+    
+    public let onSend: (_ data: ArraySlice<UInt8>) -> ()
     
     var body: some View {
-        TextEditor(text: .constant(environment.terminal))
-            .monospaced()
+        JimulatorTerminalAdapter(terminal: $terminal, onSend: onSend)
     }
 }
