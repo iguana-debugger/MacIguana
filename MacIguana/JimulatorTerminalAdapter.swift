@@ -34,10 +34,7 @@ struct JimulatorTerminalAdapter: NSViewRepresentable {
         
         func send(source: SwiftTerm.TerminalView, data: ArraySlice<UInt8>) {
 //            Jimulator expects some different keycodes to what the terminal gives, so we convert them here
-            
             let convertedData: [UInt8] = data.map { $0.jimulator }
-            
-            print("\(convertedData)")
             onSend(convertedData)
         }
         
@@ -69,11 +66,13 @@ struct JimulatorTerminalAdapter: NSViewRepresentable {
     
     func updateNSView(_ nsView: SwiftTerm.TerminalView, context: Context) {
         if !terminal.isEmpty {
-            let convertedTerminal = terminal.flatMap { $0.terminal }
+            for char in terminal {
+                let xpos = nsView.terminal.getCursorLocation().x
+                let convertedChar = char.terminal(xpos)
+                
+                nsView.feed(byteArray: ArraySlice(convertedChar))
+            }
             
-            print(convertedTerminal)
-            
-            nsView.feed(byteArray: ArraySlice(convertedTerminal))
             terminal.removeAll()
         }
     }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftTerm
 
 /// Functions for converting to/from Jimulator for SwiftTerm
 extension UInt8 {
@@ -22,12 +23,14 @@ extension UInt8 {
     }
     
     /// Converts a Jimulator keycode to a terminal keycode
-    var terminal: [UInt8] {
+    func terminal(_ xpos: Int) -> [UInt8] {
         switch self {
-//        case 10: // Newline
-//            return 13
         case 8: // Backspace
-            return [8, 127, 8]
+            if xpos == 0 {
+                return [27, 77] + EscapeSequences.moveEndNormal + [8, 127, 8] // ESC M, end, followed by backspace
+            } else {
+                return [8, 127, 8]
+            }
         default:
             return [self]
         }
