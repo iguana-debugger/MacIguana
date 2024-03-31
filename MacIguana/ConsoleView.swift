@@ -10,7 +10,8 @@ import SwiftUI
 struct ConsoleView: View {
     @Binding public var terminal: [UInt8]
     
-    public let onSend: (_ data: ArraySlice<UInt8>) -> ()
+    /// A callback that passes up the terminal's `send` output. Pre-formatted to be Komodo-compatible.
+    public let onSend: (_ data: [UInt8]) -> ()
     
     var body: some View {
         JimulatorTerminalAdapter(terminal: $terminal, onSend: onSend)

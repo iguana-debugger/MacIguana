@@ -11,14 +11,18 @@ import SwiftTerm
 struct JimulatorTerminalAdapter: NSViewRepresentable {
     typealias NSViewType = TerminalView
     
+    /// The buffer to feed into the terminal. When read in, the terminal will empty this buffer. The terminal handles
+    /// conversion from Jimulator to terminal bytes.
     @Binding var terminal: [UInt8]
     
-    public let onSend: (_ data: ArraySlice<UInt8>) -> ()
+    /// A callback that passes up the terminal's `send` output. Pre-formatted to be Komodo-compatible.
+    public let onSend: (_ data: [UInt8]) -> ()
     
     class Coordinator: NSObject, TerminalViewDelegate {
-        public let onSend: (_ data: ArraySlice<UInt8>) -> ()
+        /// A callback that passes up the terminal's `send` output. Pre-formatted to be Komodo-compatible.
+        public let onSend: (_ data: [UInt8]) -> ()
         
-        public init(onSend: @escaping (_: ArraySlice<UInt8>) -> Void) {
+        public init(onSend: @escaping (_: [UInt8]) -> Void) {
             self.onSend = onSend
         }
         
@@ -29,8 +33,12 @@ struct JimulatorTerminalAdapter: NSViewRepresentable {
         func hostCurrentDirectoryUpdate(source: SwiftTerm.TerminalView, directory: String?) {}
         
         func send(source: SwiftTerm.TerminalView, data: ArraySlice<UInt8>) {
-            print("\(data)")
-            onSend(data)
+//            Jimulator expects some different keycodes to what the terminal gives, so we convert them here
+            
+            let convertedData: [UInt8] = data.map { $0.jimulator }
+            
+            print("\(convertedData)")
+            onSend(convertedData)
         }
         
         func scrolled(source: SwiftTerm.TerminalView, position: Double) {}
@@ -61,7 +69,11 @@ struct JimulatorTerminalAdapter: NSViewRepresentable {
     
     func updateNSView(_ nsView: SwiftTerm.TerminalView, context: Context) {
         if !terminal.isEmpty {
-            nsView.feed(byteArray: ArraySlice(terminal))
+            let convertedTerminal = terminal.flatMap { $0.terminal }
+            
+            print(convertedTerminal)
+            
+            nsView.feed(byteArray: ArraySlice(convertedTerminal))
             terminal.removeAll()
         }
     }

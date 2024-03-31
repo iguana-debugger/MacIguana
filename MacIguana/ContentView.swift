@@ -23,8 +23,7 @@ struct ContentView: View {
                 }
                 .layoutPriority(1)
                 ConsoleView(terminal: .init(get: { environment.terminal }, set: { environment.terminal = $0 })) {
-                    let convertedData = $0.map { $0 == 13 ? 10 : $0 }
-                    try! environment.environment.writeToTerminal(message: Data(convertedData))
+                    try! environment.environment.writeToTerminal(message: Data($0))
                 }
                     .frame(minHeight: 200)
             }
