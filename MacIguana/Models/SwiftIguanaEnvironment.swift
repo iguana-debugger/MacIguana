@@ -62,9 +62,26 @@ class SwiftIguanaEnvironment {
                     self.boardState = try self.environment.status()
                     self.registers = try self.environment.registers()
                     
-                    let newMemory = try self.watchedMemoryAddresses.map { ($0, try self.environment.readMemory(address: $0)) }
+                    if !watchedMemoryAddresses.isEmpty {
+//                        We extend the window of watched memory to stop visible flicker when scrolling since new list
+//                        items will briefly be shown before their value is fetched
                         
-                    self.memory = Dictionary(uniqueKeysWithValues: newMemory)
+                        let extendBy: UInt32 = 0x20 // 5 addresses each way
+
+                        var extendedWatchedMemory = watchedMemoryAddresses
+                        
+                        let min = extendedWatchedMemory.min()!
+                        let max = extendedWatchedMemory.max()!
+                        
+                        let minBound = if min < extendBy { UInt32(0) } else { min - extendBy }
+                        
+                        extendedWatchedMemory.formUnion(stride(from: minBound, through: min, by: 4))
+                        extendedWatchedMemory.formUnion(stride(from: max, through: max + extendBy, by: 4))
+                        
+                        let newMemory = try extendedWatchedMemory.map { ($0, try self.environment.readMemory(address: $0)) }
+                            
+                        self.memory = Dictionary(uniqueKeysWithValues: newMemory)
+                    }
                     
                     let terminal = try self.environment.terminalMessages()
                     
