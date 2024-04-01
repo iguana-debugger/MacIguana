@@ -24,6 +24,8 @@ struct IndexedKmdparseLine: Identifiable {
 struct DisassemblyView: View {
     public let lines: [KmdparseLine]
     
+    public let pc: UInt32
+    
     private var lineIndexes: [IndexedKmdparseLine] {
         lines.enumerated().map { .init(offset: $0.offset, element: $0.element) }
     }
@@ -35,6 +37,7 @@ struct DisassemblyView: View {
                     let hex = String(format: "%08X", memoryAddress)
                     Text(hex)
                         .monospaced()
+                        .foregroundStyle(memoryAddress == pc ? .green : .primary)
                 }
             }
             .width(70)
@@ -42,6 +45,7 @@ struct DisassemblyView: View {
                 if let word = line.element.word {
                     Text(word.hex)
                         .monospaced()
+                        .foregroundStyle(line.element.memoryAddress == pc ? .green : .primary)
                 }
             }
             .width(80)
@@ -49,19 +53,25 @@ struct DisassemblyView: View {
                 if let string = line.element.word?.string {
                     Text(string)
                         .monospaced()
+                        .foregroundStyle(line.element.memoryAddress == pc ? .green : .primary)
                 }
             }
             .width(40)
             TableColumn("Disassembly") { line in
                 Text(line.element.comment)
                     .monospaced()
+                    .foregroundStyle(line.element.memoryAddress == pc ? .green : .primary)
             }
         }
     }
 }
 
 #Preview {
-    DisassemblyView(lines: [
-        .init(memoryAddress: 0xDEADBEEF, word: .instruction(instruction: 0xDEADBEEF), comment: "Comment")
-    ])
+    DisassemblyView(
+        lines: [
+            .init(memoryAddress: 0, word: .instruction(instruction: 0), comment: "Comment"),
+            .init(memoryAddress: 0xDEADBEEF, word: .instruction(instruction: 0xDEADBEEF), comment: "Comment")
+        ],
+        pc: 0xDEADBEEF
+    )
 }

@@ -19,13 +19,20 @@ struct ContentView: View {
                 HSplitView {
                     RegisterView(registers: environment.registers)
                         .frame(width: 300)
-                    DisassemblyView(lines: environment.currentKmd ?? [])
+                    VSplitView {
+                        DisassemblyView(lines: environment.currentKmd ?? [], pc: environment.registers.pc)
+                        MemoryList(values: environment.memory) {
+                            environment.watchedMemoryAddresses.insert($0)
+                        } onUnwatch: {
+                            environment.watchedMemoryAddresses.remove($0)
+                        }
+                    }
                 }
                 .layoutPriority(1)
                 JimulatorTerminalAdapter(terminal: .init(get: { environment.terminal }, set: { environment.terminal = $0 })) {
                     try! environment.environment.writeToTerminal(message: Data($0))
                 }
-                    .frame(minHeight: 200)
+                .frame(minHeight: 300)
             }
             BoardStatePane(boardState: environment.boardState)
                 .padding(.bottom, 4)

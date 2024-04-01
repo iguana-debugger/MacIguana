@@ -25,11 +25,15 @@ class SwiftIguanaEnvironment {
     
     var eventLoopError: (any Error)?
     
+    var memory: [UInt32 : UInt32] = [:]
+    
     var registers = Registers.zero
     
     var terminal: [UInt8] = []
     
     var timer: Timer = .init() // We do an empty init here so that we can capture self in init
+    
+    var watchedMemoryAddresses: Set<UInt32> = Set()
     
     init(asmPath: URL, includePaths: [String] = []) throws {
         self.environment = try IguanaEnvironment()
@@ -54,15 +58,18 @@ class SwiftIguanaEnvironment {
         
         timer = Timer.scheduledTimer(withTimeInterval: 0.05 , repeats: true) { [weak self] timer in
             do {
-                self?.registers = try self?.environment.registers() ?? .zero
-                self?.boardState = try self?.environment.status() ?? .init(status: .broken, stepsRemaining: 0, stepsSinceReset: 0)
-//                self?.terminal.append(try self?.environment.terminalMessages() ?? "")
-                
-                let terminal = try self?.environment.terminalMessages()
-                
-                if let terminal {
+                if let self {
+                    self.boardState = try self.environment.status()
+                    self.registers = try self.environment.registers()
+                    
+                    let newMemory = try self.watchedMemoryAddresses.map { ($0, try self.environment.readMemory(address: $0)) }
+                        
+                    self.memory = Dictionary(uniqueKeysWithValues: newMemory)
+                    
+                    let terminal = try self.environment.terminalMessages()
+                    
                     let terminalBytes = [UInt8](terminal)
-                    self?.terminal.append(contentsOf: terminalBytes)
+                    self.terminal.append(contentsOf: terminalBytes)
                 }
             } catch {
 //                If an error has occurred, set the error and cancel the run loop.
