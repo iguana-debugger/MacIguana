@@ -18,11 +18,11 @@ struct ContentView: View {
             VSplitView {
                 HSplitView {
                     RegisterView(registers: environment.registers)
-                        .frame(maxWidth: 250)
+                        .frame(width: 300)
                     DisassemblyView(lines: environment.currentKmd ?? [])
                 }
                 .layoutPriority(1)
-                ConsoleView(terminal: .init(get: { environment.terminal }, set: { environment.terminal = $0 })) {
+                JimulatorTerminalAdapter(terminal: .init(get: { environment.terminal }, set: { environment.terminal = $0 })) {
                     try! environment.environment.writeToTerminal(message: Data($0))
                 }
                     .frame(minHeight: 200)
