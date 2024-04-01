@@ -57,6 +57,9 @@ struct JimulatorTerminalAdapter: NSViewRepresentable {
         let terminal = Terminal(delegate: terminalView, options: terminalOptions)
         terminalView.terminal = terminal
         
+//        todo: https://migueldeicaza.github.io/SwiftTermDocs/documentation/swiftterm/terminalview/backspacesendscontrolh
+//        https://migueldeicaza.github.io/SwiftTermDocs/documentation/swiftterm/terminalview/returnbytesequence may help with returns?
+        
         terminalView.terminalDelegate = context.coordinator
         
         terminalView.configureNativeColors()
