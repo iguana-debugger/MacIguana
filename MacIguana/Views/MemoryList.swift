@@ -18,6 +18,7 @@ struct MemoryList: View {
     private let addresses: [UInt32] = (0...0xFFFF).filter { $0 % 4 == 0 }
     
     public let values: [UInt32 : UInt32]
+    public let pc: UInt32
     
     public let onWatch: (UInt32) -> ()
     public let onUnwatch: (UInt32) -> ()
@@ -29,6 +30,7 @@ struct MemoryList: View {
 
                 Text(hex)
                     .monospaced()
+                    .foregroundStyle(address == pc ? .green : .primary)
                     .onAppear { onWatch(address) }
                     .onDisappear { onUnwatch(address) }
             }
@@ -39,6 +41,7 @@ struct MemoryList: View {
 
                     Text(hex)
                         .monospaced()
+                        .foregroundStyle(address == pc ? .green : .primary)
                 }
             }
             .width(80)
@@ -46,6 +49,7 @@ struct MemoryList: View {
                 if let value = values[address], let decoded = try? decodeInstruction(word: value) {
                     Text(decoded)
                         .monospaced()
+                        .foregroundStyle(address == pc ? .green : .primary)
                 }
             }
         }
@@ -53,7 +57,7 @@ struct MemoryList: View {
 }
 
 #Preview {
-    MemoryList(values: [0:0]) { _ in
+    MemoryList(values: [0:0], pc: 0) { _ in
 //        
     } onUnwatch: { _ in
 //        

@@ -21,7 +21,7 @@ struct ContentView: View {
                         .frame(width: 300)
                     VSplitView {
                         DisassemblyView(lines: environment.currentKmd ?? [], pc: environment.registers.pc)
-                        MemoryList(values: environment.memory) {
+                        MemoryList(values: environment.memory, pc: environment.registers.pc) {
                             environment.watchedMemoryAddresses.insert($0)
                         } onUnwatch: {
                             environment.watchedMemoryAddresses.remove($0)
