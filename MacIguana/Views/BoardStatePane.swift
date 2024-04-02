@@ -15,9 +15,6 @@ struct BoardStatePane: View {
         HStack {
             Text(boardState.status.description)
             Spacer()
-            Text("Steps Remaining: \(boardState.stepsRemaining)")
-                .monospacedDigit()
-            Spacer()
             Text("Steps Since Reset: \(boardState.stepsSinceReset)")
                 .monospacedDigit()
         }
