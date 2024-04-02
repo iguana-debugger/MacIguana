@@ -15,6 +15,7 @@ extension UInt32: Identifiable {
 }
 
 struct MemoryList: View {
+    // I'd rather show all 1MB, but SwiftUI hates having so many rows
     private let addresses: [UInt32] = (0...0xFFFF).filter { $0 % 4 == 0 }
     
     public let values: [UInt32 : UInt32]

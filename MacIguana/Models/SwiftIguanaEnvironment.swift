@@ -66,7 +66,7 @@ class SwiftIguanaEnvironment {
 //                        We extend the window of watched memory to stop visible flicker when scrolling since new list
 //                        items will briefly be shown before their value is fetched
                         
-                        let extendBy: UInt32 = 0x20 // 5 addresses each way
+                        let extendBy: UInt32 = 0x40 // 10 addresses each way
 
                         var extendedWatchedMemory = watchedMemoryAddresses
                         
