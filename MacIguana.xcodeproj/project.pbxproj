@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A05C74C2BBC7CB600CB7F15 /* BreakpointButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A05C74B2BBC7CB600CB7F15 /* BreakpointButton.swift */; };
 		1A12D2CB2B87C06600639258 /* Libiguana in Frameworks */ = {isa = PBXBuildFile; productRef = 1A12D2CA2B87C06600639258 /* Libiguana */; };
 		1A2741712B9F406700E563AE /* KmdparseWord+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2741702B9F406700E563AE /* KmdparseWord+hex.swift */; };
 		1A2741732B9F4A5900E563AE /* KmdparseWord+string.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2741722B9F4A5900E563AE /* KmdparseWord+string.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A05C74B2BBC7CB600CB7F15 /* BreakpointButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakpointButton.swift; sourceTree = "<group>"; };
 		1A2741702B9F406700E563AE /* KmdparseWord+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KmdparseWord+hex.swift"; sourceTree = "<group>"; };
 		1A2741722B9F4A5900E563AE /* KmdparseWord+string.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KmdparseWord+string.swift"; sourceTree = "<group>"; };
 		1A401C212AE81994003EB398 /* MacIguana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacIguana.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +133,7 @@
 				1A67BDFF2BB73F0400868933 /* JimulatorTerminalAdapter.swift */,
 				1A7596E92B1E6271001D46AF /* RegisterView.swift */,
 				1A5391DE2BBB18FA003CBD84 /* MemoryList.swift */,
+				1A05C74B2BBC7CB600CB7F15 /* BreakpointButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				1A480F7E2BA9FEAB0016A17D /* AssemblyLoader.swift in Sources */,
 				1A401C252AE81994003EB398 /* MacIguanaApp.swift in Sources */,
 				1A5391DF2BBB18FA003CBD84 /* MemoryList.swift in Sources */,
+				1A05C74C2BBC7CB600CB7F15 /* BreakpointButton.swift in Sources */,
 				1A2741712B9F406700E563AE /* KmdparseWord+hex.swift in Sources */,
 				1AE0B2702BA4AE450053686F /* KomodoDocument.swift in Sources */,
 				1A2741732B9F4A5900E563AE /* KmdparseWord+string.swift in Sources */,

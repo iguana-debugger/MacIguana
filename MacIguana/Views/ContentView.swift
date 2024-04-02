@@ -20,7 +20,11 @@ struct ContentView: View {
                     RegisterView(registers: environment.registers)
                         .frame(width: 300)
                     VSplitView {
-                        DisassemblyView(lines: environment.currentKmd ?? [], pc: environment.registers.pc)
+                        DisassemblyView(lines: environment.currentKmd ?? [], pc: environment.registers.pc, traps: environment.traps) { memoryAddress, isSet in
+                            if isSet {
+                                try! environment.environment.createNewBreakpoint(memoryAddress: memoryAddress)
+                            }
+                        }
                         MemoryList(values: environment.memory, pc: environment.registers.pc) {
                             environment.watchedMemoryAddresses.insert($0)
                         } onUnwatch: {

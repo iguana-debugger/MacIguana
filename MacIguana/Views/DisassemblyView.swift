@@ -26,12 +26,24 @@ struct DisassemblyView: View {
     
     public let pc: UInt32
     
+    public let traps: [UInt32 : UInt8]
+    
+    public let onToggleBreakpoint: (UInt32, Bool) -> ()
+    
     private var lineIndexes: [IndexedKmdparseLine] {
         lines.enumerated().map { .init(offset: $0.offset, element: $0.element) }
     }
     
     var body: some View {
         Table(lineIndexes) {
+            TableColumn("") { line in
+                if let memoryAddress = line.element.memoryAddress {
+                    BreakpointButton(isOn: .init(get: { traps[memoryAddress] != nil }, set: { isSet in
+                        onToggleBreakpoint(memoryAddress, isSet)
+                    }))
+                }
+            }
+            .width(10)
             TableColumn("Address") { line in
                 if let memoryAddress = line.element.memoryAddress {
                     let hex = String(format: "%08X", memoryAddress)
@@ -72,6 +84,7 @@ struct DisassemblyView: View {
             .init(memoryAddress: 0, word: .instruction(instruction: 0), comment: "Comment"),
             .init(memoryAddress: 0xDEADBEEF, word: .instruction(instruction: 0xDEADBEEF), comment: "Comment")
         ],
-        pc: 0xDEADBEEF
-    )
+        pc: 0xDEADBEEF,
+        traps: [0xDEADBEEF: 1]
+    ) { _, _ in }
 }

@@ -33,6 +33,8 @@ class SwiftIguanaEnvironment {
     
     var timer: Timer = .init() // We do an empty init here so that we can capture self in init
     
+    var traps: [UInt32 : UInt8] = [:]
+    
     var watchedMemoryAddresses: Set<UInt32> = Set()
     
     init(asmPath: URL, includePaths: [String] = []) throws {
@@ -88,6 +90,8 @@ class SwiftIguanaEnvironment {
                     
                     let terminalBytes = [UInt8](terminal)
                     self.terminal.append(contentsOf: terminalBytes)
+                    
+                    self.traps = self.environment.traps()
                 }
             } catch {
 //                If an error has occurred, set the error and cancel the run loop.
