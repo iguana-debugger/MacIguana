@@ -15,8 +15,12 @@ extension UInt32: Identifiable {
 }
 
 struct MemoryList: View {
+    /// The max memory address to show in the list. This is a public static variable because it's used in
+    /// `SwiftIguanaEnvironment`.
+    public static let maxMemory: UInt32 = 0xFFFF
+    
     // I'd rather show all 1MB, but SwiftUI hates having so many rows
-    private let addresses: [UInt32] = (0...0xFFFF).filter { $0 % 4 == 0 }
+    private let addresses: [UInt32] = (0...maxMemory).filter { $0 % 4 == 0 || $0 == maxMemory }
     
     public let values: [UInt32 : UInt32]
     public let pc: UInt32

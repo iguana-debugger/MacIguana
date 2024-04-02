@@ -74,9 +74,10 @@ class SwiftIguanaEnvironment {
                         let max = extendedWatchedMemory.max()!
                         
                         let minBound = if min < extendBy { UInt32(0) } else { min - extendBy }
+                        let maxBound = if max + extendBy > MemoryList.maxMemory { MemoryList.maxMemory } else { max + extendBy }
                         
                         extendedWatchedMemory.formUnion(stride(from: minBound, through: min, by: 4))
-                        extendedWatchedMemory.formUnion(stride(from: max, through: max + extendBy, by: 4))
+                        extendedWatchedMemory.formUnion(stride(from: max, through: maxBound, by: 4))
                         
                         let newMemory = try extendedWatchedMemory.map { ($0, try self.environment.readMemory(address: $0)) }
                             
