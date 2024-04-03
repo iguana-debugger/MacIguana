@@ -17,6 +17,7 @@
 		1A401C2C2AE81995003EB398 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A401C2B2AE81995003EB398 /* Preview Assets.xcassets */; };
 		1A480F7E2BA9FEAB0016A17D /* AssemblyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A480F7D2BA9FEAB0016A17D /* AssemblyLoader.swift */; };
 		1A5391DF2BBB18FA003CBD84 /* MemoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5391DE2BBB18FA003CBD84 /* MemoryList.swift */; };
+		1A5ACF6D2BBDA03300D66C3B /* KmdparseWord+isInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5ACF6C2BBDA03300D66C3B /* KmdparseWord+isInstruction.swift */; };
 		1A67BDFE2BB73ACC00868933 /* SwiftTerm in Frameworks */ = {isa = PBXBuildFile; productRef = 1A67BDFD2BB73ACC00868933 /* SwiftTerm */; };
 		1A67BE002BB73F0400868933 /* JimulatorTerminalAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A67BDFF2BB73F0400868933 /* JimulatorTerminalAdapter.swift */; };
 		1A6D60F42BB8A5530077C04D /* LibiguanaError+LocalizedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D60F32BB8A5530077C04D /* LibiguanaError+LocalizedError.swift */; };
@@ -50,6 +51,7 @@
 		1A401C2D2AE81995003EB398 /* MacIguana.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacIguana.entitlements; sourceTree = "<group>"; };
 		1A480F7D2BA9FEAB0016A17D /* AssemblyLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyLoader.swift; sourceTree = "<group>"; };
 		1A5391DE2BBB18FA003CBD84 /* MemoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryList.swift; sourceTree = "<group>"; };
+		1A5ACF6C2BBDA03300D66C3B /* KmdparseWord+isInstruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KmdparseWord+isInstruction.swift"; sourceTree = "<group>"; };
 		1A67BDFF2BB73F0400868933 /* JimulatorTerminalAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JimulatorTerminalAdapter.swift; sourceTree = "<group>"; };
 		1A6D60F32BB8A5530077C04D /* LibiguanaError+LocalizedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LibiguanaError+LocalizedError.swift"; sourceTree = "<group>"; };
 		1A742BA62B979F5900BFB27A /* BoardStatePane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardStatePane.swift; sourceTree = "<group>"; };
@@ -141,12 +143,13 @@
 		1A948C352B880EDF001515F0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1A2741702B9F406700E563AE /* KmdparseWord+hex.swift */,
+				1A5ACF6C2BBDA03300D66C3B /* KmdparseWord+isInstruction.swift */,
+				1A2741722B9F4A5900E563AE /* KmdparseWord+string.swift */,
+				1A6D60F32BB8A5530077C04D /* LibiguanaError+LocalizedError.swift */,
 				1A948C362B880EF3001515F0 /* Registers+list.swift */,
 				1AB33E452B9698F3007468AA /* Registers+zero.swift */,
 				1A742BA82B97A06D00BFB27A /* Status+CustomStringConvertible.swift */,
-				1A2741702B9F406700E563AE /* KmdparseWord+hex.swift */,
-				1A2741722B9F4A5900E563AE /* KmdparseWord+string.swift */,
-				1A6D60F32BB8A5530077C04D /* LibiguanaError+LocalizedError.swift */,
 				1A8C63422BB9D87200FD8AAB /* UInt8+JimulatorConvert.swift */,
 			);
 			path = Extensions;
@@ -264,6 +267,7 @@
 				1AB33E462B9698F3007468AA /* Registers+zero.swift in Sources */,
 				1A67BE002BB73F0400868933 /* JimulatorTerminalAdapter.swift in Sources */,
 				1A948C392B881170001515F0 /* ListRegister.swift in Sources */,
+				1A5ACF6D2BBDA03300D66C3B /* KmdparseWord+isInstruction.swift in Sources */,
 				1A7596EC2B1E62FD001D46AF /* DisassemblyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
