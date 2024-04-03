@@ -21,10 +21,14 @@ struct ContentView: View {
                         .frame(width: 300)
                     VSplitView {
                         DisassemblyView(lines: environment.currentKmd ?? [], pc: environment.registers.pc, traps: environment.traps) { memoryAddress, isSet in
-                            if isSet {
-                                try! environment.environment.createBreakpoint(memoryAddress: memoryAddress)
-                            } else {
-                                try! environment.environment.removeBreakpoint(memoryAddress: memoryAddress)
+                            do {
+                                if isSet {
+                                    try environment.environment.createBreakpoint(memoryAddress: memoryAddress)
+                                } else {
+                                    try environment.environment.removeBreakpoint(memoryAddress: memoryAddress)
+                                }
+                            } catch {
+                                environment.fatalError = error
                             }
                         }
                         MemoryList(values: environment.memory, pc: environment.registers.pc) {
@@ -36,7 +40,11 @@ struct ContentView: View {
                 }
                 .layoutPriority(1)
                 JimulatorTerminalAdapter(terminal: .init(get: { environment.terminal }, set: { environment.terminal = $0 })) {
-                    try! environment.environment.writeToTerminal(message: Data($0))
+                    do {
+                        try environment.environment.writeToTerminal(message: Data($0))
+                    } catch {
+                        environment.fatalError = error
+                    }
                 }
                 .frame(minHeight: 300)
             }
@@ -52,7 +60,11 @@ struct ContentView: View {
             }
             ToolbarItem(id: "Stop") {
                 Button("Stop", systemImage: "stop.fill") {
-                    try? environment.environment.stopExecution()
+                    do {
+                        try environment.environment.stopExecution()
+                    } catch {
+                        environment.fatalError = error
+                    }
                 }
                 .disabled(environment.boardState.status == .stopped)
                 .keyboardShortcut(".")
@@ -61,10 +73,14 @@ struct ContentView: View {
                 Button("Run", systemImage: "play.fill") {
                     let status = environment.boardState.status
                     
-                    if status == .normal || status == .stopped {
-                        try? environment.environment.startExecution(steps: 0)
-                    } else {
-                        try? environment.environment.continueExecution()
+                    do {
+                        if status == .normal || status == .stopped {
+                            try environment.environment.startExecution(steps: 0)
+                        } else {
+                            try environment.environment.continueExecution()
+                        }
+                    } catch {
+                        environment.fatalError = error
                     }
                 }
                 .keyboardShortcut("r")

@@ -23,7 +23,8 @@ class SwiftIguanaEnvironment {
     
     var currentKmd: [KmdparseLine]?
     
-    var eventLoopError: (any Error)?
+    /// An error to be associated with the environment.
+    var fatalError: (any Error)?
     
     var memory: [UInt32 : UInt32] = [:]
     
@@ -61,6 +62,12 @@ class SwiftIguanaEnvironment {
         timer = Timer.scheduledTimer(withTimeInterval: 0.05 , repeats: true) { [weak self] timer in
             do {
                 if let self {
+//                    If an error has been thrown from elsewhere, stop the run loop.
+                    if self.fatalError != nil {
+                        timer.invalidate()
+                        return
+                    }
+                    
                     self.boardState = try self.environment.status()
                     self.registers = try self.environment.registers()
                     
@@ -96,7 +103,7 @@ class SwiftIguanaEnvironment {
             } catch {
 //                If an error has occurred, set the error and cancel the run loop.
 //                Errors here should pretty much always be unrecoverable.
-                self?.eventLoopError = error
+                self?.fatalError = error
                 timer.invalidate()
             }
         }

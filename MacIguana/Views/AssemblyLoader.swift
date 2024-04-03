@@ -32,15 +32,15 @@ struct AssemblyLoader: View {
             ContentView(environment: environment) {
                 loadEnvironment()
             }
-            .alert("Fatal Error", isPresented: .constant(environment.eventLoopError != nil)) {
+            .alert("Fatal Error", isPresented: .constant(environment.fatalError != nil)) {
                 Button("Close") {
                     dismissWindow()
                 }
             } message: {
-                let errorText = if let iguanaError = environment.eventLoopError as? LibiguanaError {
+                let errorText = if let iguanaError = environment.fatalError as? LibiguanaError {
                     iguanaError.errorDescription
                 } else {
-                    environment.eventLoopError?.localizedDescription
+                    environment.fatalError?.localizedDescription
                 }
                 Text("Iguana has had a fatal error. The error was: \(errorText ?? "no error????").")
             }
