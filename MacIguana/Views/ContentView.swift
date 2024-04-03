@@ -22,7 +22,9 @@ struct ContentView: View {
                     VSplitView {
                         DisassemblyView(lines: environment.currentKmd ?? [], pc: environment.registers.pc, traps: environment.traps) { memoryAddress, isSet in
                             if isSet {
-                                try! environment.environment.createNewBreakpoint(memoryAddress: memoryAddress)
+                                try! environment.environment.createBreakpoint(memoryAddress: memoryAddress)
+                            } else {
+                                try! environment.environment.removeBreakpoint(memoryAddress: memoryAddress)
                             }
                         }
                         MemoryList(values: environment.memory, pc: environment.registers.pc) {

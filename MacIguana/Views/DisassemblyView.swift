@@ -44,6 +44,7 @@ struct DisassemblyView: View {
                 }
             }
             .width(10)
+            .alignment(.center)
             TableColumn("Address") { line in
                 if let memoryAddress = line.element.memoryAddress {
                     let hex = String(format: "%08X", memoryAddress)

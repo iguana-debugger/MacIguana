@@ -23,7 +23,7 @@ struct BreakpointToggleStyle: ToggleStyle {
         let style: Color = if configuration.isOn {
             .red
         } else if isHovering {
-            .gray
+            .gray.opacity(0.5)
         } else {
             .clear
         }
@@ -33,10 +33,9 @@ struct BreakpointToggleStyle: ToggleStyle {
         } label: {
             Circle()
                 .foregroundStyle(style)
-                .frame(minWidth: 10, minHeight: 10)
         }
-        .buttonStyle(PlainButtonStyle())
         .contentShape(.circle)
+        .buttonStyle(PlainButtonStyle())
         .onHover { isHovering = $0 }
     }
 }

@@ -11,7 +11,7 @@ import Libiguana
 extension KmdparseWord {
     var isInstruction: Bool {
         switch self {
-        case .instruction(let instruction):
+        case .instruction:
             true
         default:
             false

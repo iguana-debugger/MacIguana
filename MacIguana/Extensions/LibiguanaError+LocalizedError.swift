@@ -37,6 +37,8 @@ extension LibiguanaError: LocalizedError {
             message
         case .TooManyTraps(message: let message):
             message
+        case .NoTrapForAddress(message: let message):
+            message
         }
     }
 }
