@@ -53,6 +53,16 @@ struct ContentView: View {
                 .padding(.horizontal, 10)
         }
         .toolbar(id: "main") {
+            ToolbarItem(id: "Step") {
+                Button("Step", systemImage: "arrow.right") {
+                    do {
+                        try environment.environment.startExecution(steps: 1)
+                    } catch {
+                        environment.fatalError = error
+                    }
+                }
+                .disabled(environment.boardState.status == .running)
+            }
             ToolbarItem(id: "Reset") {
                 Button("Reset", systemImage: "arrow.clockwise") {
                     onReload()
