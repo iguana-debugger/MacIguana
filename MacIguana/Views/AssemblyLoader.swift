@@ -30,6 +30,7 @@ struct AssemblyLoader: View {
     var body: some View {
         if let environment {
             ContentView(environment: environment) {
+                try? environment.environment.killJimulator()
                 loadEnvironment()
             }
             .alert("Fatal Error", isPresented: .constant(environment.fatalError != nil)) {
@@ -45,6 +46,9 @@ struct AssemblyLoader: View {
                 Text("Iguana has had a fatal error. The error was: \(errorText ?? "no error????").")
             }
             .dialogSeverity(.critical)
+            .onReceive(NotificationCenter.default.publisher(for: NSApplication.willTerminateNotification), perform: { _ in
+                try? environment.environment.killJimulator()
+            })
         } else if let startupError {
             ScrollView {
                 Group {
