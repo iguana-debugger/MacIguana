@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    public let environment: SwiftIguanaEnvironment
+    @State public var environment: SwiftIguanaEnvironment
     
     /// A callback to a function that reloads the current assembly file.
     public let onReload: () -> ()
@@ -39,7 +39,14 @@ struct ContentView: View {
                     }
                 }
                 .layoutPriority(1)
-                JimulatorTerminalAdapter(terminal: .init(get: { environment.terminal }, set: { environment.terminal = $0 })) {
+//                JimulatorTerminalAdapter(terminal: .init(get: { environment.terminal }, set: { environment.terminal = $0 })) {
+//                    do {
+//                        try environment.environment.writeToTerminal(message: Data($0))
+//                    } catch {
+//                        environment.fatalError = error
+//                    }
+//                }
+                LockedTextField(terminal: $environment.terminal) {
                     do {
                         try environment.environment.writeToTerminal(message: Data($0))
                     } catch {

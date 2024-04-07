@@ -38,7 +38,9 @@ struct JimulatorTerminalAdapter: NSViewRepresentable {
             onSend(convertedData)
         }
         
-        func scrolled(source: SwiftTerm.TerminalView, position: Double) {}
+        func scrolled(source: SwiftTerm.TerminalView, position: Double) {
+            print(position)
+        }
         
         func clipboardCopy(source: SwiftTerm.TerminalView, content: Data) {}
         
@@ -61,7 +63,6 @@ struct JimulatorTerminalAdapter: NSViewRepresentable {
 //        https://migueldeicaza.github.io/SwiftTermDocs/documentation/swiftterm/terminalview/returnbytesequence may help with returns?
         
         terminalView.terminalDelegate = context.coordinator
-        
         terminalView.configureNativeColors()
         
         return terminalView
