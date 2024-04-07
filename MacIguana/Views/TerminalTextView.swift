@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct TerminalTextView: NSViewRepresentable {
-    /// The buffer to feed into the terminal. When read in, the terminal will empty this buffer. The terminal handles
-    /// conversion from Jimulator to terminal bytes.
-    @Binding var terminal: [UInt8]
+    @Binding public var text: String
     
     /// A callback that passes up the terminal's `send` output. Pre-formatted to be Komodo-compatible.
     public let onSend: (_ data: [UInt8]) -> ()
@@ -73,24 +71,25 @@ struct TerminalTextView: NSViewRepresentable {
     func updateNSView(_ nsView: NSScrollView, context: Context) {
         guard let textView = nsView.documentView as? NSTextView else { return }
 
-        if !terminal.isEmpty {
-            if let terminalString = String(data: Data(terminal), encoding: .utf8) {
-                for char in terminalString {
-                    if let ascii = char.asciiValue {
-                        if ascii == 8 {
-                            let _ = textView.string.popLast()
-                        } else {
-                            textView.string.append(char)
-                        }
-                    }
-                }
-            }
+//        if !terminal.isEmpty {
+//            if let terminalString = String(data: Data(terminal), encoding: .utf8) {
+//                for char in terminalString {
+//                    if let ascii = char.asciiValue {
+//                        if ascii == 8 {
+//                            let _ = textView.string.popLast()
+//                        } else {
+//                            textView.string.append(char)
+//                        }
+//                    }
+//                }
+//            }
+//            
+//            terminal.removeAll()
+        
+        textView.string = text
             
-            terminal.removeAll()
-            
-//            TODO: let the user disable this/disable on scroll up
-            textView.scrollToEndOfDocument(nil)
-        }
+//        TODO: let the user disable this/disable on scroll up
+        textView.scrollToEndOfDocument(nil)
     }
     
     func makeCoordinator() -> Coordinator {

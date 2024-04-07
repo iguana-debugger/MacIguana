@@ -30,7 +30,6 @@ struct AssemblyLoader: View {
     var body: some View {
         if let environment {
             ContentView(environment: environment) {
-                try? environment.environment.killJimulator()
                 loadEnvironment()
             }
             .alert("Fatal Error", isPresented: .constant(environment.fatalError != nil)) {

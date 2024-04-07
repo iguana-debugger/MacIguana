@@ -30,7 +30,7 @@ class SwiftIguanaEnvironment {
     
     var registers = Registers.zero
     
-    var terminal: [UInt8] = []
+    var terminalText: String = ""
     
     var timer: Timer = .init() // We do an empty init here so that we can capture self in init
     
@@ -95,8 +95,18 @@ class SwiftIguanaEnvironment {
                     
                     let terminal = try self.environment.terminalMessages()
                     
-                    let terminalBytes = [UInt8](terminal)
-                    self.terminal.append(contentsOf: terminalBytes)
+                    if let terminalString = String(data: terminal, encoding: .ascii) {
+                        for char in terminalString {
+                            guard let ascii = char.asciiValue else { continue }
+                            
+//                            If the character is a backspace, pop a character from the terminal. Otherwise, append
+                            if ascii == 8 {
+                                let _ = self.terminalText.popLast()
+                            } else {
+                                self.terminalText.append(char)
+                            }
+                        }
+                    }
                     
                     self.traps = self.environment.traps()
                 }

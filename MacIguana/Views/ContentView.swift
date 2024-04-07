@@ -46,7 +46,7 @@ struct ContentView: View {
 //                        environment.fatalError = error
 //                    }
 //                }
-                TerminalTextView(terminal: $environment.terminal) {
+                TerminalTextView(text: $environment.terminalText) {
                     do {
                         try environment.environment.writeToTerminal(message: Data($0))
                     } catch {
