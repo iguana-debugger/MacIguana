@@ -78,7 +78,7 @@ struct LockedTextField: NSViewRepresentable {
                 for char in terminalString {
                     if let ascii = char.asciiValue {
                         if ascii == 8 {
-                            textView.string.popLast()
+                            let _ = textView.string.popLast()
                         } else {
                             textView.string.append(char)
                         }
@@ -87,6 +87,8 @@ struct LockedTextField: NSViewRepresentable {
             }
             
             terminal.removeAll()
+            
+//            TODO: let the user disable this/disable on scroll up
             textView.scrollToEndOfDocument(nil)
         }
     }
