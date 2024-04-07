@@ -46,7 +46,7 @@ struct ContentView: View {
 //                        environment.fatalError = error
 //                    }
 //                }
-                LockedTextField(terminal: $environment.terminal) {
+                TerminalTextView(terminal: $environment.terminal) {
                     do {
                         try environment.environment.writeToTerminal(message: Data($0))
                     } catch {

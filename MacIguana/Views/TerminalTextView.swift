@@ -1,5 +1,5 @@
 //
-//  LockedTextField.swift
+//  TerminalTextView.swift
 //  MacIguana
 //
 //  Created by James on 05/04/2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LockedTextField: NSViewRepresentable {
+struct TerminalTextView: NSViewRepresentable {
     /// The buffer to feed into the terminal. When read in, the terminal will empty this buffer. The terminal handles
     /// conversion from Jimulator to terminal bytes.
     @Binding var terminal: [UInt8]
