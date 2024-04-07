@@ -87,6 +87,7 @@ struct LockedTextField: NSViewRepresentable {
             }
             
             terminal.removeAll()
+            textView.scrollToEndOfDocument(nil)
         }
     }
     
