@@ -53,6 +53,7 @@
 		1A480F7D2BA9FEAB0016A17D /* AssemblyLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyLoader.swift; sourceTree = "<group>"; };
 		1A5391DE2BBB18FA003CBD84 /* MemoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryList.swift; sourceTree = "<group>"; };
 		1A5ACF6C2BBDA03300D66C3B /* KmdparseWord+isInstruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KmdparseWord+isInstruction.swift"; sourceTree = "<group>"; };
+		1A64AE402BC42FB0008E53DB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1A67BDFF2BB73F0400868933 /* JimulatorTerminalAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JimulatorTerminalAdapter.swift; sourceTree = "<group>"; };
 		1A6D60F32BB8A5530077C04D /* LibiguanaError+LocalizedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LibiguanaError+LocalizedError.swift"; sourceTree = "<group>"; };
 		1A742BA62B979F5900BFB27A /* BoardStatePane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardStatePane.swift; sourceTree = "<group>"; };
@@ -91,6 +92,7 @@
 		1A401C182AE81994003EB398 = {
 			isa = PBXGroup;
 			children = (
+				1A64AE402BC42FB0008E53DB /* README.md */,
 				1A401C232AE81994003EB398 /* MacIguana */,
 				1A401C222AE81994003EB398 /* Products */,
 			);
