@@ -18,5 +18,6 @@ struct MacIguanaApp: App {
                 Text("This document doesn't have a URL path for some reason?")
             }
         }
+        .defaultSize(width: 1200, height: 800)
     }
 }
