@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TerminalTextView: NSViewRepresentable {
-    @Binding public var text: String
+    public let text: String
     
     /// A callback that passes up the terminal's `send` output. Pre-formatted to be Komodo-compatible.
     public let onSend: (_ data: [UInt8]) -> ()

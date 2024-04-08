@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State public var environment: SwiftIguanaEnvironment
+    public let environment: SwiftIguanaEnvironment
     
     /// A callback to a function that reloads the current assembly file.
     public let onReload: () -> ()
@@ -46,7 +46,7 @@ struct ContentView: View {
 //                        environment.fatalError = error
 //                    }
 //                }
-                TerminalTextView(text: $environment.terminalText) {
+                TerminalTextView(text: environment.terminalText) {
                     do {
                         try environment.environment.writeToTerminal(message: Data($0))
                     } catch {
