@@ -70,8 +70,8 @@ struct ContentView: View {
                 }
                 .disabled(environment.boardState.status == .running)
             }
-            ToolbarItem(id: "Reset") {
-                Button("Reset", systemImage: "arrow.clockwise") {
+            ToolbarItem(id: "Reload") {
+                Button("Reload", systemImage: "arrow.clockwise") {
                     onReload()
                 }
             }
