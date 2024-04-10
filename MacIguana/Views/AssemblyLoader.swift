@@ -29,25 +29,32 @@ struct AssemblyLoader: View {
     
     var body: some View {
         if let environment {
-            ContentView(environment: environment) {
-                loadEnvironment()
-            }
-            .alert("Fatal Error", isPresented: .constant(environment.fatalError != nil)) {
-                Button("Close") {
-                    dismissWindow()
-                }
-            } message: {
-                let errorText = if let iguanaError = environment.fatalError as? LibiguanaError {
-                    iguanaError.errorDescription
+            if let fatalError = environment.fatalError {
+                let errorText = if let iguanaError = fatalError as? LibiguanaError {
+                    iguanaError.errorDescription ?? "No description"
                 } else {
-                    environment.fatalError?.localizedDescription
+                    fatalError.localizedDescription
                 }
-                Text("Iguana has had a fatal error. The error was: \(errorText ?? "no error????").")
+                
+                let errorMessage: LocalizedStringKey = """
+                \(errorText)
+                
+                Please restart MacIguana. If this error occurs repeatedly, [open an issue](https://github.com/iguana-debugger/MacIguana/issues).
+                """
+
+                ContentUnavailableView {
+                    Label("Fatal Error", systemImage: "exclamationmark.octagon.fill")
+                } description: {
+                    Text(errorMessage)
+                }
+            } else {
+                ContentView(environment: environment) {
+                    loadEnvironment()
+                }
+                .onReceive(NotificationCenter.default.publisher(for: NSApplication.willTerminateNotification), perform: { _ in
+                    try? environment.environment.killJimulator()
+                })
             }
-            .dialogSeverity(.critical)
-            .onReceive(NotificationCenter.default.publisher(for: NSApplication.willTerminateNotification), perform: { _ in
-                try? environment.environment.killJimulator()
-            })
         } else if let startupError {
             ScrollView {
                 Group {
