@@ -59,7 +59,7 @@ class SwiftIguanaEnvironment {
             return nil
         }
         
-        timer = Timer.scheduledTimer(withTimeInterval: 0.05 , repeats: true) { [weak self] timer in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { [weak self] timer in
             do {
                 if let self {
 //                    If an error has been thrown from elsewhere, stop the run loop.
