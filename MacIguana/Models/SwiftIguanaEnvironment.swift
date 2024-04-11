@@ -13,6 +13,12 @@ enum CompileFailedError: Error {
     case aasmFailed(terminal: String)
 }
 
+enum RunLoopInterval: TimeInterval {
+    case active = 0.05
+    case inactive = 0.1
+    case minimised = 1
+}
+
 /// A wrapper around `IguanaEnvironment` to allow for Observable
 @Observable
 class SwiftIguanaEnvironment {
@@ -38,6 +44,17 @@ class SwiftIguanaEnvironment {
     
     var watchedMemoryAddresses: Set<UInt32> = Set()
     
+    /// The current run loop interval for the environment. We keep this so that we can stop/start the timer with the
+    /// correct interval.
+    var runLoopInterval: RunLoopInterval = .active {
+        didSet {
+//            If the run loop is running, set it to the new interval
+            if timer.isValid {
+                createTimer(runLoopInterval)
+            }
+        }
+    }
+    
     init(asmPath: URL, includePaths: [String] = []) throws {
         self.environment = try IguanaEnvironment()
         
@@ -59,7 +76,14 @@ class SwiftIguanaEnvironment {
             return nil
         }
         
-        timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { [weak self] timer in
+        createTimer(.active)
+    }
+    
+    /// Initialises this environment's run loop timer, invalidating the previously set one.
+    func createTimer(_ interval: RunLoopInterval) {
+        timer.invalidate()
+
+        timer = Timer.scheduledTimer(withTimeInterval: interval.rawValue, repeats: true) { [weak self] timer in
             do {
                 if let self {
 //                    If an error has been thrown from elsewhere, stop the run loop.
@@ -69,6 +93,12 @@ class SwiftIguanaEnvironment {
                     }
                     
                     self.boardState = try self.environment.status()
+                    
+                    if self.boardState.status == .stopped || self.boardState.status == .finished {
+//                        If the program has finished, stop the run loop to save power.
+                        timer.invalidate()
+                    }
+                    
                     self.registers = try self.environment.registers()
                     
                     if !watchedMemoryAddresses.isEmpty {
@@ -117,6 +147,12 @@ class SwiftIguanaEnvironment {
                 timer.invalidate()
             }
         }
+    }
+    
+    /// Starts execution, and restarts the timer at the given run loop interval.
+    func start(steps: UInt32 = 0) throws {
+        try environment.startExecution(steps: steps)
+        createTimer(runLoopInterval)
     }
 
     deinit {

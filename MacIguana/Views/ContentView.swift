@@ -63,7 +63,7 @@ struct ContentView: View {
             ToolbarItem(id: "Step") {
                 Button("Step", systemImage: "arrow.right") {
                     do {
-                        try environment.environment.startExecution(steps: 1)
+                        try environment.start(steps: 1)
                     } catch {
                         environment.fatalError = error
                     }
@@ -92,7 +92,7 @@ struct ContentView: View {
                     
                     do {
                         if status == .normal || status == .stopped {
-                            try environment.environment.startExecution(steps: 0)
+                            try environment.start()
                         } else {
                             try environment.environment.continueExecution()
                         }

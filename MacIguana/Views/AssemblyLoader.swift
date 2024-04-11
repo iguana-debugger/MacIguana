@@ -54,6 +54,16 @@ struct AssemblyLoader: View {
                 .onReceive(NotificationCenter.default.publisher(for: NSApplication.willTerminateNotification), perform: { _ in
                     try? environment.environment.killJimulator()
                 })
+                .onReceive(NotificationCenter.default.publisher(for: NSApplication.willBecomeActiveNotification), perform: { _ in
+                    environment.runLoopInterval = .active
+                })
+                .onReceive(NotificationCenter.default.publisher(for: NSApplication.didResignActiveNotification), perform: { _ in
+                    environment.runLoopInterval = .inactive
+                })
+//                .onReceive(NotificationCenter.default.publisher(for: NSWindow.didMiniaturizeNotification), perform: { _ in
+//                    print("Miniaturised!")
+//                    environment.createTimer(.minimised)
+//                })
             }
         } else if let startupError {
             ScrollView {
