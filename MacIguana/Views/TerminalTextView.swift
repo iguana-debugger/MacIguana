@@ -65,6 +65,8 @@ struct TerminalTextView: NSViewRepresentable {
         textView.font = .monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
         textView.delegate = context.coordinator
         
+        textView.setAccessibilityLabel("Terminal")
+        
         return scrollView
     }
     

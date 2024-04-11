@@ -41,6 +41,7 @@ struct DisassemblyView: View {
                     BreakpointButton(isOn: .init(get: { traps[memoryAddress] != nil }, set: { isSet in
                         onToggleBreakpoint(memoryAddress, isSet)
                     }))
+                    .accessibilityLabel("Set breakpoint")
                 }
             }
             .width(10)
@@ -50,6 +51,7 @@ struct DisassemblyView: View {
                     let hex = String(format: "%08X", memoryAddress)
                     Text(hex)
                         .monospaced()
+                        .speechSpellsOutCharacters()
                         .foregroundStyle(line.element.word?.isInstruction ?? false && memoryAddress == pc ? .green : .primary)
                 }
             }
@@ -58,6 +60,7 @@ struct DisassemblyView: View {
                 if let word = line.element.word {
                     Text(word.hex)
                         .monospaced()
+                        .speechSpellsOutCharacters()
                         .foregroundStyle(line.element.word?.isInstruction ?? false && line.element.memoryAddress == pc ? .green : .primary)
                 }
             }
@@ -66,6 +69,7 @@ struct DisassemblyView: View {
                 if let string = line.element.word?.string {
                     Text(string)
                         .monospaced()
+                        .speechSpellsOutCharacters()
                         .foregroundStyle(line.element.word?.isInstruction ?? false && line.element.memoryAddress == pc ? .green : .primary)
                 }
             }
@@ -76,6 +80,7 @@ struct DisassemblyView: View {
                     .foregroundStyle(line.element.word?.isInstruction ?? false && line.element.memoryAddress == pc ? .green : .primary)
             }
         }
+        .accessibilityLabel("Disassembly")
     }
 }
 

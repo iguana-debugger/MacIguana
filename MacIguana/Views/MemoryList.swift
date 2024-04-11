@@ -35,6 +35,7 @@ struct MemoryList: View {
 
                 Text(hex)
                     .monospaced()
+                    .speechSpellsOutCharacters()
                     .foregroundStyle(address == pc ? .green : .primary)
                     .onAppear { onWatch(address) }
                     .onDisappear { onUnwatch(address) }
@@ -46,6 +47,7 @@ struct MemoryList: View {
 
                     Text(hex)
                         .monospaced()
+                        .speechSpellsOutCharacters()
                         .foregroundStyle(address == pc ? .green : .primary)
                 }
             }
@@ -54,10 +56,12 @@ struct MemoryList: View {
                 if let value = values[address], let decoded = try? decodeInstruction(word: value) {
                     Text(decoded)
                         .monospaced()
+                        .speechSpellsOutCharacters()
                         .foregroundStyle(address == pc ? .green : .primary)
                 }
             }
         }
+        .accessibilityLabel("Memory")
     }
 }
 
