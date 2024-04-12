@@ -18,6 +18,8 @@ struct BoardStatePane: View {
             Text("Steps Since Reset: \(boardState.stepsSinceReset)")
                 .monospacedDigit()
         }
+        .accessibilityLabel("Emulator state")
+        .accessibilityValue("State: \(boardState.status.description), Steps Since Reset: \(boardState.stepsSinceReset)")
     }
 }
 
