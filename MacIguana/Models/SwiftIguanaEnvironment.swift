@@ -92,7 +92,17 @@ class SwiftIguanaEnvironment {
                         return
                     }
                     
+                    let previousStatus = self.boardState.status
                     self.boardState = try self.environment.status()
+                    
+//                    If the board state changes, announce it with VoiceOver
+                    if self.boardState.status != previousStatus {
+                        var announcement = AttributedString("Emulator \(self.boardState.status.description)")
+                        announcement.accessibilitySpeechAnnouncementPriority = .high
+                        
+                        AccessibilityNotification.Announcement(announcement)
+                            .post()
+                    }
                     
                     if self.boardState.status == .stopped || self.boardState.status == .finished {
 //                        If the program has finished, stop the run loop to save power.
