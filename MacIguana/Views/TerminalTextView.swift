@@ -33,21 +33,25 @@ struct TerminalTextView: NSViewRepresentable {
         }
         
         func textView(_ textView: NSTextView, shouldChangeTextIn affectedCharRange: NSRange, replacementString: String?) -> Bool {
-//            Check if the replacement string is empty (indicating a deletion)
-            if replacementString?.isEmpty ?? true {
-                return false
-            }
-            
             let documentLength = textView.textStorage?.length ?? 0
             
 //            If the location isn't at the end of the document, don't allow the input. This also stops stuff like
 //            selecting text to overwrite the document.
-            if affectedCharRange.location != documentLength {
-                return false
-            }
+//            if affectedCharRange.location != documentLength {
+//                return false
+//            }
+            
+            let deleteLength = if replacementString?.isEmpty ?? true {
+                affectedCharRange.length
+            } else { 0 }
             
             if let convertedData = replacementString?.data(using: .utf8)?.map({ $0.jimulator }) {
                 onSend(convertedData)
+                
+//                Create backspaces for delete events, and send them. If the user is backspacing, convertedData will be
+//                empty.
+                let deletes = Array(repeating: UInt8(8), count: deleteLength)
+                onSend(deletes)
                 
 //                I'm 99% sure we can't get here with replacementString being nil, but better safe than sorry
                 if let replacementString {
