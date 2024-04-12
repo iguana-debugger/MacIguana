@@ -48,6 +48,16 @@ struct TerminalTextView: NSViewRepresentable {
             
             if let convertedData = replacementString?.data(using: .utf8)?.map({ $0.jimulator }) {
                 onSend(convertedData)
+                
+//                I'm 99% sure we can't get here with replacementString being nil, but better safe than sorry
+                if let replacementString {
+//                    We manually speak out text input because we're being sneaky and going around macOS's back, so it
+//                    doesn't speak out text itself
+                    var attributedConvertedData = AttributedString(replacementString)
+                    attributedConvertedData.accessibilitySpeechSpellsOutCharacters = true
+                    
+                    AccessibilityNotification.Announcement(attributedConvertedData).post()
+                }
             }
             
             return false
