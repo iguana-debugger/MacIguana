@@ -6,7 +6,18 @@
 //
 
 import SwiftUI
+import TipKit
 import Libiguana
+
+private struct BoardStatePaneTip: Tip {
+    var title: Text {
+        Text("Board state")
+    }
+    
+    var message: Text? {
+        Text("Check the emulator state, and how long it's been running for")
+    }
+}
 
 struct BoardStatePane: View {
     public let boardState: BoardState
@@ -20,6 +31,7 @@ struct BoardStatePane: View {
         }
         .accessibilityLabel("Emulator state")
         .accessibilityValue("State: \(boardState.status.description), Steps Since Reset: \(boardState.stepsSinceReset)")
+        .popoverTip(BoardStatePaneTip(), arrowEdge: .bottom)
     }
 }
 

@@ -6,7 +6,18 @@
 //
 
 import SwiftUI
+import TipKit
 import Libiguana
+
+private struct DisassemblyViewTip: Tip {
+    var title: Text {
+        Text("Disassembly")
+    }
+    
+    var message: Text? {
+        Text("View what the assembler outputted, and set breakpoints")
+    }
+}
 
 /// `KmdParseLine`, with the associated offset. We do this to get `Identifiable` conformance. I did try using
 /// `KmdparseLine`'s `hashValue`, but of course identical lines caused issues.
@@ -81,6 +92,7 @@ struct DisassemblyView: View {
             }
         }
         .accessibilityLabel("Disassembly")
+        .popoverTip(DisassemblyViewTip(), arrowEdge: .trailing)
     }
 }
 

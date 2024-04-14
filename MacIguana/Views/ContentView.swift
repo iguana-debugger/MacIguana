@@ -6,6 +6,17 @@
 //
 
 import SwiftUI
+import TipKit
+
+private struct TerminalTip: Tip {
+    var title: Text {
+        Text("Terminal")
+    }
+    
+    var message: Text? {
+        Text("Text input/output from your program")
+    }
+}
 
 struct ContentView: View {
     public let environment: SwiftIguanaEnvironment
@@ -54,6 +65,7 @@ struct ContentView: View {
                     }
                 }
                 .frame(minHeight: 300)
+                .popoverTip(TerminalTip(), arrowEdge: .trailing)
             }
             BoardStatePane(boardState: environment.boardState)
                 .padding(.bottom, 4)

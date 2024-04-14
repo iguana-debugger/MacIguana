@@ -6,7 +6,18 @@
 //
 
 import SwiftUI
+import TipKit
 import Libiguana
+
+private struct MemoryListTip: Tip {
+    var title: Text {
+        Text("Memory")
+    }
+    
+    var message: Text? {
+        Text("View raw memory in the emulator")
+    }
+}
 
 extension UInt32: Identifiable {
     public var id: Self {
@@ -62,6 +73,7 @@ struct MemoryList: View {
             }
         }
         .accessibilityLabel("Memory")
+        .popoverTip(MemoryListTip(), arrowEdge: .trailing)
     }
 }
 

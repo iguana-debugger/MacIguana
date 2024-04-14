@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TipKit
 import Libiguana
 
 @main
@@ -14,6 +15,14 @@ struct MacIguanaApp: App {
         DocumentGroup(viewing: KomodoDocument.self) { document in
             if let url = document.fileURL {
                 AssemblyLoader(url: url)
+                    .task {
+                        try? Tips.resetDatastore()
+                        
+                        try? Tips.configure([
+                            .displayFrequency(.immediate),
+                            .datastoreLocation(.applicationDefault)
+                        ])
+                    }
             } else {
                 Text("This document doesn't have a URL path for some reason?")
             }

@@ -6,7 +6,18 @@
 //
 
 import SwiftUI
+import TipKit
 import Libiguana
+
+private struct RegisterViewTip: Tip {
+    var title: Text {
+        Text("Registers")
+    }
+    
+    var message: Text? {
+        Text("View register state")
+    }
+}
 
 struct RegisterView: View {
     public let registers: Registers
@@ -34,6 +45,7 @@ struct RegisterView: View {
 //            .width(70)
         }
         .accessibilityLabel("Registers")
+        .popoverTip(RegisterViewTip(), arrowEdge: .leading)
     }
 }
 
