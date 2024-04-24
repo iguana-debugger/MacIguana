@@ -16,10 +16,9 @@
 		1A401C292AE81995003EB398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A401C282AE81995003EB398 /* Assets.xcassets */; };
 		1A401C2C2AE81995003EB398 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A401C2B2AE81995003EB398 /* Preview Assets.xcassets */; };
 		1A480F7E2BA9FEAB0016A17D /* AssemblyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A480F7D2BA9FEAB0016A17D /* AssemblyLoader.swift */; };
+		1A4ACDC72BD9957A005DFCC3 /* UInt8+JimulatorConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4ACDC62BD9957A005DFCC3 /* UInt8+JimulatorConvert.swift */; };
 		1A5391DF2BBB18FA003CBD84 /* MemoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5391DE2BBB18FA003CBD84 /* MemoryList.swift */; };
 		1A5ACF6D2BBDA03300D66C3B /* KmdparseWord+isInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5ACF6C2BBDA03300D66C3B /* KmdparseWord+isInstruction.swift */; };
-		1A67BDFE2BB73ACC00868933 /* SwiftTerm in Frameworks */ = {isa = PBXBuildFile; productRef = 1A67BDFD2BB73ACC00868933 /* SwiftTerm */; };
-		1A67BE002BB73F0400868933 /* JimulatorTerminalAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A67BDFF2BB73F0400868933 /* JimulatorTerminalAdapter.swift */; };
 		1A6D60F42BB8A5530077C04D /* LibiguanaError+LocalizedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D60F32BB8A5530077C04D /* LibiguanaError+LocalizedError.swift */; };
 		1A742BA72B979F5900BFB27A /* BoardStatePane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A742BA62B979F5900BFB27A /* BoardStatePane.swift */; };
 		1A742BA92B97A06D00BFB27A /* Status+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A742BA82B97A06D00BFB27A /* Status+CustomStringConvertible.swift */; };
@@ -27,7 +26,6 @@
 		1A7596EC2B1E62FD001D46AF /* DisassemblyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7596EB2B1E62FD001D46AF /* DisassemblyView.swift */; };
 		1A84188A2B9F1BF8006CC42C /* Libiguana in Frameworks */ = {isa = PBXBuildFile; productRef = 1A8418892B9F1BF8006CC42C /* Libiguana */; };
 		1A84188D2B9F1C59006CC42C /* Libiguana in Frameworks */ = {isa = PBXBuildFile; productRef = 1A84188C2B9F1C59006CC42C /* Libiguana */; };
-		1A8C63432BB9D87200FD8AAB /* UInt8+JimulatorConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8C63422BB9D87200FD8AAB /* UInt8+JimulatorConvert.swift */; };
 		1A948C372B880EF3001515F0 /* Registers+list.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A948C362B880EF3001515F0 /* Registers+list.swift */; };
 		1A948C392B881170001515F0 /* ListRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A948C382B881170001515F0 /* ListRegister.swift */; };
 		1AB33E462B9698F3007468AA /* Registers+zero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB33E452B9698F3007468AA /* Registers+zero.swift */; };
@@ -51,16 +49,15 @@
 		1A401C2B2AE81995003EB398 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1A401C2D2AE81995003EB398 /* MacIguana.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacIguana.entitlements; sourceTree = "<group>"; };
 		1A480F7D2BA9FEAB0016A17D /* AssemblyLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyLoader.swift; sourceTree = "<group>"; };
+		1A4ACDC62BD9957A005DFCC3 /* UInt8+JimulatorConvert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UInt8+JimulatorConvert.swift"; path = "../../../../../.Trash/UInt8+JimulatorConvert.swift"; sourceTree = "<group>"; };
 		1A5391DE2BBB18FA003CBD84 /* MemoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryList.swift; sourceTree = "<group>"; };
 		1A5ACF6C2BBDA03300D66C3B /* KmdparseWord+isInstruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KmdparseWord+isInstruction.swift"; sourceTree = "<group>"; };
 		1A64AE402BC42FB0008E53DB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		1A67BDFF2BB73F0400868933 /* JimulatorTerminalAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JimulatorTerminalAdapter.swift; sourceTree = "<group>"; };
 		1A6D60F32BB8A5530077C04D /* LibiguanaError+LocalizedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LibiguanaError+LocalizedError.swift"; sourceTree = "<group>"; };
 		1A742BA62B979F5900BFB27A /* BoardStatePane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardStatePane.swift; sourceTree = "<group>"; };
 		1A742BA82B97A06D00BFB27A /* Status+CustomStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+CustomStringConvertible.swift"; sourceTree = "<group>"; };
 		1A7596E92B1E6271001D46AF /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		1A7596EB2B1E62FD001D46AF /* DisassemblyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisassemblyView.swift; sourceTree = "<group>"; };
-		1A8C63422BB9D87200FD8AAB /* UInt8+JimulatorConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt8+JimulatorConvert.swift"; sourceTree = "<group>"; };
 		1A948C362B880EF3001515F0 /* Registers+list.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registers+list.swift"; sourceTree = "<group>"; };
 		1A948C382B881170001515F0 /* ListRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRegister.swift; sourceTree = "<group>"; };
 		1AB33E452B9698F3007468AA /* Registers+zero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registers+zero.swift"; sourceTree = "<group>"; };
@@ -81,7 +78,6 @@
 				1A84188D2B9F1C59006CC42C /* Libiguana in Frameworks */,
 				1A84188A2B9F1BF8006CC42C /* Libiguana in Frameworks */,
 				1AFCEA872B86235D000FE4C1 /* Libiguana in Frameworks */,
-				1A67BDFE2BB73ACC00868933 /* SwiftTerm in Frameworks */,
 				1A12D2CB2B87C06600639258 /* Libiguana in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +133,6 @@
 				1A05C74B2BBC7CB600CB7F15 /* BreakpointButton.swift */,
 				1A401C262AE81994003EB398 /* ContentView.swift */,
 				1A7596EB2B1E62FD001D46AF /* DisassemblyView.swift */,
-				1A67BDFF2BB73F0400868933 /* JimulatorTerminalAdapter.swift */,
 				1A5391DE2BBB18FA003CBD84 /* MemoryList.swift */,
 				1A7596E92B1E6271001D46AF /* RegisterView.swift */,
 				1ADD4BAA2BBFFFA700E75B4C /* TerminalTextView.swift */,
@@ -155,7 +150,7 @@
 				1A948C362B880EF3001515F0 /* Registers+list.swift */,
 				1AB33E452B9698F3007468AA /* Registers+zero.swift */,
 				1A742BA82B97A06D00BFB27A /* Status+CustomStringConvertible.swift */,
-				1A8C63422BB9D87200FD8AAB /* UInt8+JimulatorConvert.swift */,
+				1A4ACDC62BD9957A005DFCC3 /* UInt8+JimulatorConvert.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -194,7 +189,6 @@
 				1A12D2CA2B87C06600639258 /* Libiguana */,
 				1A8418892B9F1BF8006CC42C /* Libiguana */,
 				1A84188C2B9F1C59006CC42C /* Libiguana */,
-				1A67BDFD2BB73ACC00868933 /* SwiftTerm */,
 			);
 			productName = MacIguana;
 			productReference = 1A401C212AE81994003EB398 /* MacIguana.app */;
@@ -226,7 +220,6 @@
 			mainGroup = 1A401C182AE81994003EB398;
 			packageReferences = (
 				1A84188B2B9F1C59006CC42C /* XCRemoteSwiftPackageReference "libiguana-swift" */,
-				1A67BDFC2BB73ACC00868933 /* XCRemoteSwiftPackageReference "SwiftTerm" */,
 			);
 			productRefGroup = 1A401C222AE81994003EB398 /* Products */;
 			projectDirPath = "";
@@ -256,11 +249,11 @@
 			files = (
 				1A7596EA2B1E6271001D46AF /* RegisterView.swift in Sources */,
 				1ADD4BAB2BBFFFA700E75B4C /* TerminalTextView.swift in Sources */,
-				1A8C63432BB9D87200FD8AAB /* UInt8+JimulatorConvert.swift in Sources */,
 				1A6D60F42BB8A5530077C04D /* LibiguanaError+LocalizedError.swift in Sources */,
 				1AFCEA8A2B86264C000FE4C1 /* SwiftIguanaEnvironment.swift in Sources */,
 				1A401C272AE81994003EB398 /* ContentView.swift in Sources */,
 				1A742BA72B979F5900BFB27A /* BoardStatePane.swift in Sources */,
+				1A4ACDC72BD9957A005DFCC3 /* UInt8+JimulatorConvert.swift in Sources */,
 				1A480F7E2BA9FEAB0016A17D /* AssemblyLoader.swift in Sources */,
 				1A401C252AE81994003EB398 /* MacIguanaApp.swift in Sources */,
 				1A5391DF2BBB18FA003CBD84 /* MemoryList.swift in Sources */,
@@ -271,7 +264,6 @@
 				1A742BA92B97A06D00BFB27A /* Status+CustomStringConvertible.swift in Sources */,
 				1A948C372B880EF3001515F0 /* Registers+list.swift in Sources */,
 				1AB33E462B9698F3007468AA /* Registers+zero.swift in Sources */,
-				1A67BE002BB73F0400868933 /* JimulatorTerminalAdapter.swift in Sources */,
 				1A948C392B881170001515F0 /* ListRegister.swift in Sources */,
 				1A5ACF6D2BBDA03300D66C3B /* KmdparseWord+isInstruction.swift in Sources */,
 				1A7596EC2B1E62FD001D46AF /* DisassemblyView.swift in Sources */,
@@ -481,14 +473,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1A67BDFC2BB73ACC00868933 /* XCRemoteSwiftPackageReference "SwiftTerm" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/migueldeicaza/SwiftTerm";
-			requirement = {
-				kind = revision;
-				revision = 90c0cd9bd3b97ff9fdcbba478d7dd40c68ecea85;
-			};
-		};
 		1A84188B2B9F1C59006CC42C /* XCRemoteSwiftPackageReference "libiguana-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/iguana-debugger/libiguana-swift";
@@ -503,11 +487,6 @@
 		1A12D2CA2B87C06600639258 /* Libiguana */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Libiguana;
-		};
-		1A67BDFD2BB73ACC00868933 /* SwiftTerm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1A67BDFC2BB73ACC00868933 /* XCRemoteSwiftPackageReference "SwiftTerm" */;
-			productName = SwiftTerm;
 		};
 		1A8418892B9F1BF8006CC42C /* Libiguana */ = {
 			isa = XCSwiftPackageProductDependency;
