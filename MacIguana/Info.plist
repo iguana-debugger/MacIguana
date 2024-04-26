@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+<dict>
+	<key>SUFeedURL</key>
+	<string>https://raw.githubusercontent.com/iguana-debugger/MacIguana/main/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>i++WpK0lLKWG8hhIqjYXHVg5a1+cxJxRQSE1dNF/9AY=</string>
+</dict>
 </plist>

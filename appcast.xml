@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>MacIguana</title>
+        <item>
+            <title>1.0</title>
+            <pubDate>Fri, 26 Apr 2024 17:58:01 +0100</pubDate>
+            <sparkle:version>1</sparkle:version>
+            <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/Iguana-Debugger/MacIguana/releases/download/1.0/MacIguana.zip" length="2349301" type="application/octet-stream" sparkle:edSignature="41M5BYJ1aO7Yiy6VbH6vX8/6F62HvSbEAfwFraECrjHe7RXVOtQjftSvJ1qm/+gei4JyWzD4iWSm2r3ua3koAw=="/>
+        </item>
+    </channel>
+</rss>

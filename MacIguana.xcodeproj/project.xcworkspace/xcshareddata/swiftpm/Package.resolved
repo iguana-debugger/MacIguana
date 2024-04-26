@@ -1,5 +1,5 @@
 {
-  "originHash" : "9d1e0708ec0134e497f0fd9d95907d62b5eb34fba6e26fa9e80eece008b9a685",
+  "originHash" : "4d61b311e8d5ef7674d97f2bc43b4bbdb200c601483bbfd976ba28c4b4b50f6a",
   "pins" : [
     {
       "identity" : "libiguana-swift",
@@ -8,6 +8,15 @@
       "state" : {
         "branch" : "main",
         "revision" : "20cd1a090a52fa3082e176c9000f8f5d357b9b36"
+      }
+    },
+    {
+      "identity" : "sparkle",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sparkle-project/Sparkle",
+      "state" : {
+        "revision" : "0a4caaf7a81eea2cece651ef4b17331fa0634dff",
+        "version" : "2.6.0"
       }
     }
   ],

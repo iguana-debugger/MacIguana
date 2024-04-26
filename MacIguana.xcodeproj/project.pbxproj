@@ -16,9 +16,11 @@
 		1A401C292AE81995003EB398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A401C282AE81995003EB398 /* Assets.xcassets */; };
 		1A401C2C2AE81995003EB398 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A401C2B2AE81995003EB398 /* Preview Assets.xcassets */; };
 		1A480F7E2BA9FEAB0016A17D /* AssemblyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A480F7D2BA9FEAB0016A17D /* AssemblyLoader.swift */; };
-		1A4ACDC72BD9957A005DFCC3 /* UInt8+JimulatorConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4ACDC62BD9957A005DFCC3 /* UInt8+JimulatorConvert.swift */; };
+		1A4ACDCA2BD99788005DFCC3 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 1A4ACDC92BD99788005DFCC3 /* Sparkle */; };
 		1A5391DF2BBB18FA003CBD84 /* MemoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5391DE2BBB18FA003CBD84 /* MemoryList.swift */; };
 		1A5ACF6D2BBDA03300D66C3B /* KmdparseWord+isInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5ACF6C2BBDA03300D66C3B /* KmdparseWord+isInstruction.swift */; };
+		1A679F8E2BDC09E00017FCC2 /* UInt8+JimulatorConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A679F8D2BDC09E00017FCC2 /* UInt8+JimulatorConvert.swift */; };
+		1A679F902BDC47FA0017FCC2 /* appcast.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1A679F8F2BDC47FA0017FCC2 /* appcast.xml */; };
 		1A6D60F42BB8A5530077C04D /* LibiguanaError+LocalizedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D60F32BB8A5530077C04D /* LibiguanaError+LocalizedError.swift */; };
 		1A742BA72B979F5900BFB27A /* BoardStatePane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A742BA62B979F5900BFB27A /* BoardStatePane.swift */; };
 		1A742BA92B97A06D00BFB27A /* Status+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A742BA82B97A06D00BFB27A /* Status+CustomStringConvertible.swift */; };
@@ -49,10 +51,11 @@
 		1A401C2B2AE81995003EB398 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1A401C2D2AE81995003EB398 /* MacIguana.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacIguana.entitlements; sourceTree = "<group>"; };
 		1A480F7D2BA9FEAB0016A17D /* AssemblyLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyLoader.swift; sourceTree = "<group>"; };
-		1A4ACDC62BD9957A005DFCC3 /* UInt8+JimulatorConvert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UInt8+JimulatorConvert.swift"; path = "../../../../../.Trash/UInt8+JimulatorConvert.swift"; sourceTree = "<group>"; };
 		1A5391DE2BBB18FA003CBD84 /* MemoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryList.swift; sourceTree = "<group>"; };
 		1A5ACF6C2BBDA03300D66C3B /* KmdparseWord+isInstruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KmdparseWord+isInstruction.swift"; sourceTree = "<group>"; };
 		1A64AE402BC42FB0008E53DB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1A679F8D2BDC09E00017FCC2 /* UInt8+JimulatorConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt8+JimulatorConvert.swift"; sourceTree = "<group>"; };
+		1A679F8F2BDC47FA0017FCC2 /* appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
 		1A6D60F32BB8A5530077C04D /* LibiguanaError+LocalizedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LibiguanaError+LocalizedError.swift"; sourceTree = "<group>"; };
 		1A742BA62B979F5900BFB27A /* BoardStatePane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardStatePane.swift; sourceTree = "<group>"; };
 		1A742BA82B97A06D00BFB27A /* Status+CustomStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+CustomStringConvertible.swift"; sourceTree = "<group>"; };
@@ -73,6 +76,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AFCEA8D2B86292A000FE4C1 /* Libiguana in Frameworks */,
+				1A4ACDCA2BD99788005DFCC3 /* Sparkle in Frameworks */,
 				1AFCEA902B862966000FE4C1 /* Libiguana in Frameworks */,
 				1AFCEA842B86219C000FE4C1 /* Libiguana in Frameworks */,
 				1A84188D2B9F1C59006CC42C /* Libiguana in Frameworks */,
@@ -88,6 +92,7 @@
 		1A401C182AE81994003EB398 = {
 			isa = PBXGroup;
 			children = (
+				1A679F8F2BDC47FA0017FCC2 /* appcast.xml */,
 				1A64AE402BC42FB0008E53DB /* README.md */,
 				1A401C232AE81994003EB398 /* MacIguana */,
 				1A401C222AE81994003EB398 /* Products */,
@@ -150,7 +155,7 @@
 				1A948C362B880EF3001515F0 /* Registers+list.swift */,
 				1AB33E452B9698F3007468AA /* Registers+zero.swift */,
 				1A742BA82B97A06D00BFB27A /* Status+CustomStringConvertible.swift */,
-				1A4ACDC62BD9957A005DFCC3 /* UInt8+JimulatorConvert.swift */,
+				1A679F8D2BDC09E00017FCC2 /* UInt8+JimulatorConvert.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 				1A12D2CA2B87C06600639258 /* Libiguana */,
 				1A8418892B9F1BF8006CC42C /* Libiguana */,
 				1A84188C2B9F1C59006CC42C /* Libiguana */,
+				1A4ACDC92BD99788005DFCC3 /* Sparkle */,
 			);
 			productName = MacIguana;
 			productReference = 1A401C212AE81994003EB398 /* MacIguana.app */;
@@ -202,7 +208,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					1A401C202AE81994003EB398 = {
 						CreatedOnToolsVersion = 15.0.1;
@@ -220,6 +226,7 @@
 			mainGroup = 1A401C182AE81994003EB398;
 			packageReferences = (
 				1A84188B2B9F1C59006CC42C /* XCRemoteSwiftPackageReference "libiguana-swift" */,
+				1A4ACDC82BD99788005DFCC3 /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			productRefGroup = 1A401C222AE81994003EB398 /* Products */;
 			projectDirPath = "";
@@ -237,6 +244,7 @@
 			files = (
 				1A401C2C2AE81995003EB398 /* Preview Assets.xcassets in Resources */,
 				1A401C292AE81995003EB398 /* Assets.xcassets in Resources */,
+				1A679F902BDC47FA0017FCC2 /* appcast.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +261,7 @@
 				1AFCEA8A2B86264C000FE4C1 /* SwiftIguanaEnvironment.swift in Sources */,
 				1A401C272AE81994003EB398 /* ContentView.swift in Sources */,
 				1A742BA72B979F5900BFB27A /* BoardStatePane.swift in Sources */,
-				1A4ACDC72BD9957A005DFCC3 /* UInt8+JimulatorConvert.swift in Sources */,
+				1A679F8E2BDC09E00017FCC2 /* UInt8+JimulatorConvert.swift in Sources */,
 				1A480F7E2BA9FEAB0016A17D /* AssemblyLoader.swift in Sources */,
 				1A401C252AE81994003EB398 /* MacIguanaApp.swift in Sources */,
 				1A5391DF2BBB18FA003CBD84 /* MemoryList.swift in Sources */,
@@ -307,6 +315,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -370,6 +379,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -400,6 +410,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"MacIguana/Preview Content\"";
 				DEVELOPMENT_TEAM = PFNS8PTRM7;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -429,6 +440,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"MacIguana/Preview Content\"";
 				DEVELOPMENT_TEAM = PFNS8PTRM7;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -473,6 +485,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1A4ACDC82BD99788005DFCC3 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.6.0;
+			};
+		};
 		1A84188B2B9F1C59006CC42C /* XCRemoteSwiftPackageReference "libiguana-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/iguana-debugger/libiguana-swift";
@@ -487,6 +507,11 @@
 		1A12D2CA2B87C06600639258 /* Libiguana */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Libiguana;
+		};
+		1A4ACDC92BD99788005DFCC3 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A4ACDC82BD99788005DFCC3 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
 		};
 		1A8418892B9F1BF8006CC42C /* Libiguana */ = {
 			isa = XCSwiftPackageProductDependency;

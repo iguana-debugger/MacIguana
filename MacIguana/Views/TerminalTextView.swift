@@ -33,7 +33,7 @@ struct TerminalTextView: NSViewRepresentable {
         }
         
         func textView(_ textView: NSTextView, shouldChangeTextIn affectedCharRange: NSRange, replacementString: String?) -> Bool {
-            let documentLength = textView.textStorage?.length ?? 0
+//            let documentLength = textView.textStorage?.length ?? 0
             
 //            If the location isn't at the end of the document, don't allow the input. This also stops stuff like
 //            selecting text to overwrite the document.
