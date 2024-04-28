@@ -16,6 +16,10 @@ When opening MacIguana, you will be prompted to open a `.s` file. Once opened, y
 
 To load in new changes when editing your assembly file, press the reload button in the toolbar. This resets the emulator state and loads in the file again.
 
+# Accessibility
+
+MacIguana has been tested with VoiceOver, and should be usable by VoiceOver users. This includes labels on UI elements, ensuring that data is read out correctly, and announcing when the emulator starts and stops. If you have any suggestions for improving accessibility, please open a GitHub issue.
+
 # Reporting Issues
 
 If you run into any issues with MacIguana, please open a GitHub issue. If possible, please provide a `.s` file that reproduces the issue - note that sharing coursework directly is not allowed and could be considered academic misconduct.
